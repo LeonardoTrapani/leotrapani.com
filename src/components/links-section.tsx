@@ -3,7 +3,7 @@ import Link from "next/link"
 const links = [
   { title: "resume", href: "/resume.pdf" },
   { title: "email", href: "mailto:leo@trapani.sh" },
-  { title: "x.com", href: "https://x.com/leonardotrapani" },
+  { title: "x.com", href: "https://x.com/leo_trapani" },
   { title: "github", href: "https://github.com/leonardotrapani" },
   { title: "linkedin", href: "https://www.linkedin.com/in/leonardotrapani" },
   { title: "book a call", href: "https://cal.com/leonardotrapani/30min" },
