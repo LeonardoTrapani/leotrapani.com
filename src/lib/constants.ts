@@ -1,5 +1,3 @@
-import { Item } from "@/components/section-list"
-
 export const links = [
   { title: "resume", href: "/resume.pdf" },
   { title: "email", href: "mailto:ciao@leotrapani.com" },
