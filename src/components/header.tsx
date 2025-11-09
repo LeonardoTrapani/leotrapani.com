@@ -1,5 +1,6 @@
 import { ScrambleText } from "@/components/scramble-text"
 import { MapPin, Building2 } from "lucide-react"
+import { LinksSection } from "./links-section"
 
 export function Header() {
   return (
@@ -25,6 +26,7 @@ export function Header() {
         programming, you can find me developing my custom operating system,
         fixing my vim config, playing rugby or mma, or enjoying my uni life
       </p>
+      <LinksSection />
     </header>
   )
 }
