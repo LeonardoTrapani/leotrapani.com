@@ -1,0 +1,74 @@
+---
+title: Shimmering Text
+description: Smooth shimmering text animation built with Motion and shared through my custom shadcn registry.
+image: /blog/shimmering-text.webp
+category: components
+icon: shimmering-text
+new: true
+createdAt: 2025-11-02
+updatedAt: 2025-11-02
+---
+
+<ComponentPreview
+  name="shimmering-text-demo"
+  openInV0Url="https://leotrapani.com/r/shimmering-text.json"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsListInstallType />
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn add @leotrapani/shimmering-text
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies</Step>
+
+```bash
+npm install motion clsx tailwind-merge
+```
+
+<Step>Add a cn helper</Step>
+
+<ComponentSource
+  src="src/lib/utils.ts"
+  title="lib/utils.ts"
+  showLineNumbers
+  collapsible={false}
+/>
+
+<Step>Copy and paste the following code into your project</Step>
+
+<ComponentSource
+  name="shimmering-text"
+  title="components/leotrapani/shimmering-text.tsx"
+  showLineNumbers
+/>
+
+<Step>Update the import paths to match your project setup</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { ShimmeringText } from "@/components/leotrapani/shimmering-text";
+```
+
+```tsx
+<ShimmeringText text="slide to unlock" />
+```

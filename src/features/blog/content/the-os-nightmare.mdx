@@ -1,0 +1,106 @@
+---
+title: "Stop fighting your computer: How to solve the OS nightmare"
+description: "Tired of losing focus because your OS fights against your workflow? After years of friction with mainstream operating systems, I took control and built my own personalized computing environment. Here's how I eliminated the daily frustrations, customized what mattered most, and created a computer that finally works the way I think"
+createdAt: "2025-09-13"
+updatedAt: "2025-09-13"
+pinned: true
+new: false
+---
+
+We spend most of our time on a computer. As a software developer, freelancer, and undergrad student, I use mine for everything. And as a busy kid, everything has to be optimized.
+
+## The Pain
+
+Computers haven't felt natural in a while. On macOS, you open a window, lose track of it, resize it, open the things you wanted, memorize gestures someone else decided. Just reading this feels confusing right? But think about your flow when switching between tabs, or doing anything else.
+
+Does that description now look a bit more familiar?
+
+Computers are built to be functional for the average person.
+Not for you.
+
+That's the real issue.
+
+To get into a flow state, you need to express your thoughts without thinking about the mechanics. The moment you ask:
+
+> Where is that app?
+
+> How do I open it?
+
+> Do I have to write this that way?
+
+you're not just losing time, you're losing focus. You're out of flow.
+
+That's why [ThePrimeagen](https://www.youtube.com/c/theprimeagen) is so obsessed with Neovim. He **thinks** code and doesn't waste time on how to write or edit it. He just does. And all the optimizations he does for writing code are not so much to gain 20% on typing speed:
+
+He's looking for no friction between what's in your head and how it becomes zeros and ones in memory.
+
+That's the philosophy behind how I approach computers.
+
+### The Current State of Operating Systems
+
+Mainstream operating systems have a single objective: be easy to install, learn, and use for everyone. That's great for most people, but it conflicts with the idea of removing friction for power users.
+
+And because they are closed source, deep customization is limited. We end up leaning on tools like [Raycast](https://www.raycast.com/) just to claw back a little control.
+
+This is where Linux shines.
+
+## The Solution
+
+Linux is open source, and truly customizable. People build distributions, window managers, file managers, audio systems, network interfaces, GUIs, TUIs, and more.
+
+You can practically craft your own OS.
+
+### How to Approach This
+
+If your goal is control and customization, [Arch Linux](https://archlinux.org/) is a strong choice (yes, I use Arch, btw). It lets you choose every component in a safe, practical way, backed by a great community.
+
+Save your configuration, your dotfiles, to Git so you can reproduce your setup quickly.
+
+Real talk: building a full Arch environment is hard and time consuming. You have to balance:
+
+* Time spent building the OS
+* Time saved by using it every day
+
+### Omarchy
+
+That's where [Omarchy](https://omarchy.org/) helps.
+
+Omarchy is "an opinionated Arch + Hyprland setup" by DHH.
+
+[David Heinemeier Hansson](https://dhh.dk/) (creator of Ruby on Rails, co-founder of [37signals](https://37signals.com/), Le Mans class-winning driver, and one of my heroes) felt the same pain and wanted to address it. So he built a very opinionated Arch-based setup.
+
+But the opinions themselves aren't what I like most about Omarchy. They are his opinions. The point is to arrive at your own.
+
+### Customization
+
+The real power of Omarchy is customization.
+
+DHH and the open source contributors built a framework that captures ideas in a reproducible, shareable environment.
+
+So here's what I did, and what you should do if this resonates: fork it.
+
+By forking, you keep Omarchy's framework for creating a custom OS and decide how everything works.
+
+Here's [my fork](https://github.com/leonardotrapani/omarchy) if you want a look.
+
+I want to change a keybind? I change it.
+I want to tweak the look? I tweak it.
+I want to add a tool I always use? I add it.
+I want to switch the Wi-Fi interface? I switch it.
+
+You can basically merge other Open Source projects and components together to create what you need.
+
+Or if they don't exist, or they don't do it the way you want it, you can create your own.
+
+For example, I needed a way to have powerful dictation, and I knew other people needed it, so I created [Hyprvoice](https://github.com/leonardotrapani/hyprvoice). I wrote a [blog post](/blog/hyprvoice) about it if you are interested.
+
+Omarchy isn't great because of its default setup, even if many people use it that way.
+
+It's great because it makes crafting your own opinionated setup easy.
+
+---
+
+
+Now when I sit down to work, my computer gets out of my way. No more hunting for apps, no more fighting with windows, no more breaking flow state over interface friction.
+
+That's what's possible when you stop accepting someone else's opinions about how you should compute.

@@ -1,0 +1,124 @@
+---
+title: "DX: I'm obsessed with developer experience (and you should be too)"
+description: "A developer's manifesto: DX is not fluff—it's the compounding force behind happier teams and faster products. Stories, tools, and a DX‑first ethos."
+createdAt: "2025-10-15"
+updatedAt: "2025-10-15"
+pinned: true
+new: false
+---
+
+> DX isn't cosmetics. DX compounds.
+
+I've lived both sides: weeks where shipping felt like flying, and weeks where every deploy felt like quicksand. The difference wasn't talent, willpower, or even time. It was **developer experience**.
+
+DX is the set of tools, defaults, docs, and feedback loops that make builders fast **and** happy. When you tune DX, you don't just make code "nicer." You shorten the loop from idea → change → proof. That loop speed is the force‑multiplier.
+
+---
+
+## What I mean by DX
+
+DX isn't one feature (like deployments). It's the experience surface that makes every change cheaper and safer. Here are some examples:
+
+* **Tight feedback across the whole loop:** editor → type‑checker → tests → preview → prod. Fast linting, watch‑mode tests, instant type errors, and quick ways to prove changes.
+* **Type safety and clarity by default:** strong typing, schemas/contracts between services, and APIs that compose—move fast *with* confidence.
+* **Documentation & support as first‑class:** clear "golden path," examples, copy‑paste snippets, troubleshooting, and humans/communities that actually answer.
+* **Single source of style:** one canon for how code and UI look—formatter, linter, naming conventions, design tokens, and a shared component library—so everything reads and feels consistent.
+* **Coherent repos and tooling:** one place to find things, consistent scripts, shared packages; minimal context switching.
+* **Guardrails & observability:** linters, formatters, CI checks, templates, logs/metrics that help you debug without spelunking.
+
+---
+
+## Misconceptions I hear (and what reality looks like)
+
+* **"DX just makes things easier."** Yes—and that's the point. Removing friction raises velocity *and* satisfaction, which quietly improves quality and retention.
+* **"DX = abstraction = less control."** Not necessarily. Abstraction can help (Vercel is, in a sense, a "wrapper on AWS"), but *good* DX is leverage, not hiding sharp edges at all costs. Some abstractions go too far for my needs—e.g., I don't reach for LangChain because it trades away composability and clarity in ways that slow me down. Abstraction can be the opposite of good DX when it removes the handles builders need.
+
+---
+
+## The industry is moving toward DX
+
+Vercel reset expectations (previews, zero‑config deploys), but it's part of a broader shift. Tools like **Supabase** (sane auth/storage/DB defaults), **BetterAuth** (clean auth flows for modern stacks), **Drizzle** (type‑safe ORM), and **shadcn/ui** and its registries (copy‑pasteable UI primitives) all push the same way: shorten the path from idea to proof.
+
+---
+
+## My proof: places I pushed DX until it changed outcomes
+
+### [Datapizza](https://datapizza.com) — from 6 confused repos to one fast monorepo
+
+**Before:** six repos, different pipelines, duplicate code, no internal registry; devs dreaded cross‑repo work.
+
+**After:** a **monorepo** (Turborepo, Bun). A restructuring that unified scripts, caching, releases, web apps, extensions with shared packages and docs living near the code.
+
+**Examples of what changed:**
+
+* Less copy‑paste, more shared libraries.
+* One onboarding surface; less context switching.
+* Predictable pipelines; fewer flaky builds.
+
+Convincing people to invest in DX in a business is hard because impact isn't always instant. But if you make the case, talk with the right people, show small proofs, and put your name on it, the outcomes are big: throughput rises and the team's day‑to‑day gets calmer. If your company never lets you improve DX, it may not be the right place to grow as a developer.
+
+### Rediredge — a DX‑first redirector for your own domains
+
+#### [Site](https://rediredge.app) • [GitHub](https://github.com/leonardotrapani/rediredge)
+
+**What it is:** a blazing‑fast, self‑hostable domain redirector. Go edge + Next.js control plane. Think "URL shortener," but for **your** domains—without touching DNS every time.
+
+**Why it's DX‑friendly:**
+
+* **One‑command self‑hosting.** Spin up a VPS, clone, `docker compose up -d`.
+* **Make devs do devs work.** Marketing or managers can add/change redirects in the web app instead of asking engineers to tinker with CloudFront/DNS.
+* **Delegate safely.** Beautiful, simple dashboard for non‑technical teammates; developers keep control of the edge service.
+* **Ecosystem**: Of course, it uses a set of tools that shout **dx**
+
+**Setup (self‑host) in 3 steps:**
+
+```bash
+# 1) Provision a VPS
+# 2) Clone the repo
+git clone https://github.com/leonardotrapani/rediredge && cd rediredge
+# 3) Run
+docker compose up -d
+```
+
+Point a CNAME once; manage redirects forever in the UI. That's DX: less back‑and‑forth, more shipping.
+
+---
+
+### Hyprvoice — my computing philosophy, made practical
+
+[Hyprvoice](https://github.com/leonardotrapani/hyprvoice) is voice‑powered typing for Wayland/Hyprland. It exists because my whole approach to computers is DX‑first: Arch, Neovim, tools that respect power users and get out of the way. Hyprvoice was my way to make that environment even smoother.
+
+Read the mindset behind it: [Stop fighting your computer: the OS nightmare](https://leotrapani.com/blog/the-os-nightmare).
+
+**Tiny setup snippet:**
+
+```bash
+yay -S hyprvoice-bin
+hyprvoice configure
+systemctl --user enable --now hyprvoice.service
+```
+
+---
+
+## Why DX matters more than it looks
+
+* **It compounds.** Every faster action multiplies across every PR and every teammate.
+* **It spreads.** Good DX wins converts—then becomes the new default.
+* **It unlocks output.** Happier devs ship more, review more, take more ownership.
+
+---
+
+## If you want to dig deeper
+
+* **Rediredge:** [rediredge.app](https://rediredge.app) • [github.com/leonardotrapani/rediredge](https://github.com/leonardotrapani/rediredge)
+* **Hyprvoice:** [github.com/leonardotrapani/hyprvoice](https://github.com/leonardotrapani/hyprvoice)
+* **On my system setup mindset:** [The OS nightmare](https://leotrapani.com/blog/the-os-nightmare)
+* **Very old (and cringe) Italian DX videos of mine** - most popular on Youtube Italy:
+  * Shadcn UI: [https://youtu.be/cEEUvB1LkVo](https://youtu.be/cEEUvB1LkVo)
+  * Full‑stack tooling: [https://www.youtube.com/watch?v=VYwCtJ40H_U&t](https://www.youtube.com/watch?v=VYwCtJ40H_U&t)
+
+---
+
+DX isn't an accessory. It's leverage. If you care about ideas becoming products, you should care about the experience of the people turning ideas into code.
+
+If you disagree—or want to trade war stories—reach out. I love this stuff.

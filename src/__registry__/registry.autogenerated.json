@@ -1,0 +1,54 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "leotrapani",
+  "homepage": "https://leotrapani.com/components",
+  "items": [
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utility Functions",
+      "author": "leotrapani <ciao@leotrapani.com>",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "use-sound",
+      "type": "registry:hook",
+      "title": "Sound Hook",
+      "description": "Custom React hook to load and play a sound from a given URL using the Web Audio API.",
+      "files": [
+        {
+          "path": "src/hooks/use-sound.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "shimmering-text",
+      "type": "registry:component",
+      "title": "Shimmering Text",
+      "author": "leotrapani <ciao@leotrapani.com>",
+      "description": "Smooth shimmering text animation built with Motion.",
+      "dependencies": [
+        "motion"
+      ],
+      "registryDependencies": [
+        "@leotrapani/utils"
+      ],
+      "files": [
+        {
+          "path": "src/registry/shimmering-text/shimmering-text.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
