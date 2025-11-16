@@ -50,10 +50,6 @@ Licensed under the [MIT license](./LICENSE).
 
 You're free to use my code! Just make sure to <ins>remove all my personal information</ins> before publishing your website. It's awesome to see my code being useful to someone!
 
-## Star History
-
-[![Star History](https://starchart.cc/leonardotrapani/leotrapani.com.svg?variant=adaptive&line=%23d37f2c)](https://starchart.cc/leonardotrapani/leotrapani.com)
-
 ## Acknowledgments
 
 - [React](https://react.dev)
