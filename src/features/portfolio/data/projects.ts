@@ -30,7 +30,7 @@ export const PROJECTS: Project[] = [
 - delivered one-command self-hosting through docker compose templates
 - focused on minimal ui with bullet-proof UX`,
     logo: "/images/projects/rediredge.svg",
-    isExpanded: true,
+    isExpanded: false,
   },
   {
     id: "hyprvoice",
@@ -49,6 +49,6 @@ export const PROJECTS: Project[] = [
 - real-time audio capture via pipewire and ai transcription
 - active open source contributors, 1k+ arch linux users
 `,
-    isExpanded: true,
+    isExpanded: false,
   },
 ];

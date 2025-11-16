@@ -19,6 +19,7 @@
     "hooks": "@/hooks"
   },
   "registries": {
-    "@kibo-ui": "https://kibo-ui.com/r/{name}.json"
+    "@kibo-ui": "https://kibo-ui.com/r/{name}.json",
+    "@leotrapani": "https://leotrapani.com/r/{name}.json"
   }
 }
