@@ -45,7 +45,7 @@ Deep into systems: Go, infrastructure, scalability, Docker. Focusing on TypeScri
 When I'm not programming, you can find me developing my custom linux distribution, fixing my vim config, playing rugby or MMA, or enjoying uni life in Milan.
 `,
   avatar: "/images/pfp.jpeg",
-  ogImage: "leotrapani.com/og",
+  ogImage: "/og",
   timeZone: "Europe/Rome",
   keywords: [
     "Leonardo Trapani",
