@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  const allPosts = getAllPosts();
+  const allPosts = getAllPosts().filter(p => p.metadata.category !== "components");
 
   return (
     <>

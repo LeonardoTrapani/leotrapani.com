@@ -9,7 +9,7 @@ import { getAllPosts } from "@/features/blog/data/posts";
 import { Panel, PanelHeader, PanelTitle } from "./panel";
 
 export function Blog() {
-  const allPosts = getAllPosts();
+  const allPosts = getAllPosts().filter(p => p.metadata.category !== "components");
 
   return (
     <Panel id="blog">

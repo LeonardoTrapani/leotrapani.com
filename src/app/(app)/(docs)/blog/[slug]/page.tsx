@@ -24,7 +24,7 @@ import { USER } from "@/features/portfolio/data/user";
 import { cn } from "@/lib/utils";
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = getAllPosts().filter(p => p.metadata.category !== "components");
   return posts.map((post) => ({
     slug: post.slug,
   }));
@@ -104,6 +104,10 @@ export default async function Page({
   const post = getPostBySlug(slug);
 
   if (!post) {
+    notFound();
+  }
+
+  if (post.metadata.category === "components") {
     notFound();
   }
 
