@@ -1,0 +1,199 @@
+---
+title: "Datapizza Salaries Manifesto"
+description: "Salaries is our platform for mapping the Italian tech market through detailed statistics on salaries, roles, and trends. This is our manifesto: the principles that guide us and how we put them into practice."
+image: /blog/salaries.png
+createdAt: "2025-12-9"
+updatedAt: "2025-12-9"
+pinned: true
+new: true
+---
+
+> Data from the community, for the community.
+
+Read this on [Datapizza's Blog](https://datapizza.tech/blog/salaries)
+
+## **For a competitive Italy in tech**
+
+For years, Datapizza has been working to make Italy competitive in tech. With Datapizza Jobs, we introduced "transparent compensation" in job postings. With our Open Source framework [Datapizza AI](https://github.com/datapizza-labs/datapizza-ai), we support the development of technologies built by the Italian community. Through our content and events, we strive to grow an ecosystem that can compete internationally.
+
+[Datapizza Salaries](https://salaries.datapizza.tech) is born from the same vision: salary transparency is not a luxury, but a necessity for a healthy tech market.
+
+## **Our principles**
+
+Building a platform "from the community, for the community" is not a slogan. It's a design constraint that influences every technical decision. Here's what it means to us:
+
+**Real anonymity.** Personal data is never linked to submissions. We don't ask for accounts, we don't track identities, we don't request sensitive information. The anti-abuse mechanisms we use (more on this later) are designed to be completely separated from the data we collect.
+
+**Verifiable transparency.** It's not enough to say "we're transparent." The complete dataset is automatically published every week on Hugging Face. Anyone can download it, analyze it, verify that the numbers on the platform match the raw data.
+
+**Giving back value.** The community gives us the data, we return insights. The platform is built to not require authentication, to not force anyone through our channels: the data must be as accessible and transparent as possible.
+
+**Respect for contributors.** The submission form is essential. We only ask for what's needed to produce useful statistics, without authentication or unnecessary steps. If someone from the community dedicates two minutes to contribute, those two minutes must count.
+
+**Data integrity.** Without authentication, we must protect the dataset from spam and manipulation. We do this with technologies that don't compromise anonymity, finding the balance between openness and reliability.
+
+## **How we do it**
+
+Let's move from theory to practice. This section is more technical: if you're only interested in using the platform, you can skip directly to the [conclusions](https://www.notion.so/Manifesto-di-Datapizza-Salaries-2bf04d204fa2809e83cced9d458bd84e?pvs=21). If you want to understand how we've implemented these principles, keep reading.
+
+### **Public dataset on Hugging Face**
+
+Every week, a cronjob automatically publishes the entire dataset on Hugging Face through their APIs. Not a selection, not a sample: all the data, with a flag indicating whether each submission has passed integrity checks.
+
+The dataset is released under **CC-BY-NC-4.0** license, so it remains completely open source and the data remains property of the community, and won't be used for commercial purposes.
+
+[Go to Dataset](https://huggingface.co/datasets/datapizza-ai-lab/salaries)
+
+This means you can:
+
+- Verify that the statistics shown in the app match the raw data
+- Do your own analyses with the criteria you prefer
+- Independently decide whether to include or exclude submissions based on the validation flag
+
+Automatic publication also eliminates any doubt that the data is being "curated" before release.
+
+### **Transparency in the app**
+
+When you browse [salaries.datapizza.tech](https://salaries.datapizza.tech/), every statistic shows the number of submissions it's calculated from. Not just the median value, but also how many data points support it.
+
+This serves two purposes:
+
+1. It allows you to assess the reliability of each number. A median calculated from 500 submissions is more robust than one calculated from 12.
+2. It makes it evident where more data is needed, incentivizing targeted contributions.
+
+### **Anti-bot protection: Cloudflare Turnstile**
+
+The submission form is protected by [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/), an alternative to traditional CAPTCHAs that verifies users without frustrating puzzles. It's the first line of defense against bots and automated spam.
+
+### **Fingerprinting for integrity: Thumbmark.js**
+
+Without authentication, how do we prevent someone from submitting dozens of submissions to alter the statistics?
+
+We use [Thumbmark.js](https://github.com/nicktrienenern/thumbmark), a library that generates a browser fingerprint based on technical characteristics (canvas rendering, available fonts, WebGL capabilities, etc.). This fingerprint is a hash that identifies a browser/device combination, not a person.
+
+**The crucial point: the fingerprint is never linked to the submission.** It's saved in a separate MongoDB collection, with a dynamic TTL (time-to-live). If no submissions arrive with that fingerprint for x weeks, it's automatically deleted.
+
+The flow is:
+
+1. Upon submission, we generate the fingerprint
+2. We check if it already exists in the collection
+3. If it exists and has recent submissions, we flag the new submission as "to be verified"
+4. The fingerprint itself is updated (TTL reset) but remains separated from the data
+
+This system doesn't aim to prevent every individual in the world from sending data twice (someone could use different devices on different networks), but thanks to the volume of data we manage, it's a reasonable compromise between protection and privacy, and the best solution to avoid linking an email. In the public dataset, each submission has a flag indicating whether it passed this check: you decide whether to trust it or not.
+
+## **The architecture**
+
+The infrastructure is designed to support the principles we've described: easy access to data, uncompromised performance, and a maintainable codebase.
+
+### **Next.js with aggressive caching**
+
+The app is built in Next.js, with almost everything rendered server-side. We use Next's native caching for pages:
+
+```javascript
+// Each job title page is regenerated at most once a week
+export const revalidate = 3600 * 24 * 7;
+```
+
+For each job title, we pre-generate all pages at build time with `generateStaticParams`:
+
+```javascript
+export async function generateStaticParams() {
+  const jobTitles = await getJobTitles();
+  return jobTitles.map((jobTitle) => ({
+    "job-title-id": jobTitle.id.toString(),
+  }));
+}
+```
+
+This means each job title has its own pre-generated page, with data already cached, and with metadata (for SEO for example) already ready. When a user searches "Software Engineer salary Italy," the page is already there, cached and fast.
+
+### **Python for aggregations: Polars**
+
+Statistical aggregations require specialized libraries. Instead of reinventing the wheel in TypeScript, we use Python with [Polars](https://pola.rs/): a modern data analysis library, written in Rust, significantly faster than pandas.
+
+Even with caching, aggregations must be performant for when the cache is invalidated or for new job titles. Polars allows us to calculate medians, percentiles, standard deviations, and multidimensional breakdowns in milliseconds.
+
+### **Single source of truth: from Zod to Pydantic**
+
+Here's a classic problem: we use TypeScript for Next.js and Python for aggregation APIs. How do we keep types, validations, and constants aligned?
+
+Our solution: **TypeScript is the source of truth**. We define everything in [Zod](https://zod.dev/) (validation schema for TypeScript), then automatically generate:
+
+1. JSON Schema from the Zod schema
+2. Pydantic models from the JSON Schema
+
+Here's a simplified example to illustrate the idea. This Zod schema:
+
+```typescript
+export const aggregateResponseSchema = z.object({
+  jobTitleId: z.number().int().positive(),
+  count: z.number().nonnegative(),
+  cards: z.array(
+    z.object({
+      seniority: z.enum(["junior", "mid", "senior"]),
+      medianSalary: z.number().min(0).max(500000),
+      count: z.number().nonnegative(),
+      // ... other statistical fields
+    })
+  ).length(3),
+  // ... other breakdowns
+});
+```
+
+Is automatically transformed into JSON Schema, and then into Pydantic:
+
+```python
+class Card(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    seniority: Seniority
+    medianSalary: confloat(ge=0.0, le=500000.0)
+    count: confloat(ge=0.0)
+    meanSalary: confloat(ge=0.0, le=500000.0)
+    # ...
+
+class AggregateResponse(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    jobTitleId: PositiveInt
+    count: confloat(ge=0.0)
+    cards: List[Card] = Field(..., max_length=3, min_length=3)
+    # ...
+```
+
+The generation script uses `zod-to-json-schema` and `datamodel-codegen`
+
+Here's a small snippet of this script:
+
+```javascript
+// Generate JSON Schema from Zod
+const schema = zodToJsonSchema(aggregateResponseSchema, {
+  name: "AggregateResponse",
+});
+writeFileSync("api/generated/aggregate-response-schema.json",
+  JSON.stringify(schema, null, 2));
+
+// Then, via shell, generate Pydantic
+execSync(`datamodel-codegen \
+  --input generated/aggregate-response-schema.json \
+  --output generated/aggregate_response.py \
+  --input-file-type jsonschema \
+  --output-model-type pydantic_v2.BaseModel`);
+```
+
+This pattern also extends to constants: the list of Italian regions, seniority levels, industries—everything defined once in TypeScript, exported to JSON, imported in Python. Zero drift, zero alignment bugs.
+
+### **FastAPI on Vercel Python Runtime**
+
+The Python backend runs as a serverless function on [Vercel Python Runtime](https://vercel.com/docs/functions/runtimes/python). FastAPI handles aggregation requests, validates input and output with the generated Pydantic models, and communicates with Next.js through internal APIs (protected by a shared API key in the same environment).
+
+This architecture allows us to have everything in a single Vercel deployment, without managing separate servers or external caching layers like Redis. Next.js caching is sufficient for our access pattern.
+
+## **Conclusions**
+
+Datapizza Salaries is our attempt to build something that was missing: a source of data on Italian tech work that is transparent, verifiable, and owned by the community that feeds it.
+
+If you work in tech in Italy, [contribute with your submission](https://salaries.datapizza.tech/form). If you want to get your hands dirty, download the dataset and let us know what you find. If you have feedback, we're all ears.
+
+And if this technical deep-dive has intrigued you and you want to know more about the architecture, how we manage multi-level caching, Polars aggregation patterns, type safety across multiple programming languages, developer experience, or Vercel deployment, reach out. We might make another blog post about it.
+
+[**Explore Datapizza Salaries →**](https://salaries.datapizza.tech/)
