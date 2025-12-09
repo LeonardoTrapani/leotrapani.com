@@ -1,11 +1,7 @@
 import {
   Calendar,
-  FileUser,
   GlobeIcon,
-  Lightbulb,
   MapPinIcon,
-  MarsIcon,
-  VenusIcon,
 } from "lucide-react";
 
 import { USER } from "@/features/portfolio/data/user";
