@@ -1,129 +1,88 @@
 ---
-title: "Hyprvoice: My Best Open‑Source — Wayland‑Native Voice Typing for Linux Nerds"
-description: "Press a key, speak, and your words appear. Wayland‑native. Fully configurable. Local **or** cloud models. Built in Go because concurrency is fun—and useful."
+title: "Hyprvoice: Voice-Powered Typing for the Modern Linux Desktop"
+description: "Hyprvoice is a lightweight, Wayland-native daemon that transforms your speech into instant text input across any application without the overhead of heavy software or legacy X11 hacks."
 createdAt: "2025-08-15"
 updatedAt: "2025-08-15"
-pinned: true
+pinned: false
 new: false
 ---
 
-## A tiny story about a keypress
+Voice-to-text on the Linux desktop has always been a second-class citizen.
 
-The first time Hyprvoice felt "right," I was staring at a blinking cursor. I tapped **Super+R**, said "meet at three tomorrow," tapped **Super+R** again, and watched the sentence land exactly where my cursor was. No overlay, no floating window, no mouse. Just a gesture.
+If you want to type with your voice, you usually have to choose between two equally frustrating paths:
 
-That single gesture is the whole point. Voice is incredible when it disappears into your flow instead of dragging you into a new app. Hyprvoice tries to stay invisible.
+1. **The Bloated Path:** A heavy Electron app that eats a gig of RAM just to listen to your microphone.
+2. **The Legacy Path:** A fragile chain of X11 scripts that break the second you move to a modern Wayland compositor.
 
-## Why I built this (and why I consider it my _best_ open‑source project)
+I was tired of the friction. I wanted something that felt invisible: a tool that didn't live in a window, but in my workflow. So I built **Hyprvoice**.
 
-Wayland desktops—and Hyprland in particular—deserve voice‑to‑text that isn't a museum of X11 hacks. I couldn't find anything that was both **Wayland‑native** and **fully configurable** for Linux nerds who want control: local models for privacy, cloud models for convenience, and enough knobs to tune behavior without recompiling. So I wrote it.
+## The Invisible Workflow
 
-Selfishly, I also wanted an excuse to go deep on Go: goroutines, synchronization, timeouts, and clean IPC. Hyprvoice became a playground where those ideas turned into a tool I actually use every day.
+The best tools are the ones you forget exist.
 
-## The UX is the product
+When I’m in a deep-work loop, the last thing I want to do is grab my mouse to click a "Record" button. With Hyprvoice, I tapped `Super+R`, said "create a new React component called UserProfile," tapped `Super+R` again, and watched the code appear at my cursor.
 
-Hyprvoice works like a camera shutter. Tap to start recording; tap to stop and inject. Desktop notifications tell you what's happening—_recording_, _transcribing_, _injected_—but the UI never gets in your way. If the compositor/app supports direct typing, Hyprvoice types for you. If not, it quietly falls back to the clipboard (and even restores what was there before).
+That's the core philosophy: **Voice is an input pipeline, not an application.**
 
-If you try one thing, try this:
+## Why Wayland Native?
 
-```ini
-# ~/.config/hypr/hyprland.conf
-bind = SUPER, R, exec, hyprvoice toggle
-```
+Most existing solutions rely on `XTest` or other legacy protocols. On a modern stack (like Hyprland or GNOME on Wayland), these require XWayland translation layers that are prone to latency and weird focus bugs.
 
-Open an editor, a terminal, a browser—tap, speak, tap. That's the demo.
+Hyprvoice is built from the ground up for the modern Linux stack:
 
-## How the architecture clicks (without drowning you in plumbing)
+* **Go-powered Daemon:** A lightweight control plane that stays resident in memory with almost zero overhead.
+* **PipeWire Integration:** Direct, low-latency audio capture without the PulseAudio baggage.
+* **Direct Injection:** It hooks into the native Wayland input flow using `wtype` and `ydotool`.
 
-There's a tiny **daemon** with a Unix socket. The CLI/keybind sends one‑byte commands to it. Inside, a **pipeline** moves through clear states: `idle → recording → transcribing → injecting → idle`. PipeWire captures audio, a transcriber turns it into text, and an injector delivers it where your cursor lives. Everything is guarded by timeouts so no part can get stuck.
+## Under the Hood: The Secret Sauce
 
-Most days you never notice any of this. It's the point.
+The project is structured around a state-machine pipeline. This ensures that the audio frames are handled efficiently without leaking memory or getting stuck in a recording loop.
 
-## Wayland‑native or bust
+Because this entire pipeline is multithreaded through goroutines, it needs to be secure and predictable. The secret sauce behind that calm? Go's context everywhere. Every long-running operation and external call carries a deadline or cancel.
 
-Hyprvoice is built for Wayland compositors. No X11 detours, no brittle bridges. Direct typing via `wtype` feels magical when it works; when it doesn't, the clipboard path makes sure your words still arrive. Either way, you stay in the same app, in the same flow.
-
-## Recording that respects your CPU (and your attention)
-
-Speech doesn't need 96kHz stereo. Hyprvoice records at **16 kHz mono s16**: exactly what speech models expect, easy on bandwidth and battery, and fast to ship through the pipeline. Sessions are bounded (e.g., a 5‑minute timeout) so you don't end up recording your entire afternoon by accident.
-
-## Transcription is a plug
-
-Today, Hyprvoice talks to **OpenAI Whisper** (online). Next up: **whisper.cpp** for fully local models you can grab from Hugging Face. After that: **streaming transcription**, so text appears while you speak. The design that makes this possible is a tiny interface—change one line in the config to swap engines.
-
-```go
-// One skinny seam for engines
-// internal/transcriber/transcriber.go
-
-type TranscriptionAdapter interface {
-    Transcribe(ctx context.Context, audio []byte) (string, error)
-}
-# ~/.config/hyprvoice/config.toml
-[transcription]
-provider = "openai"        # soon: "whisper_cpp" for local/offline
-model    = "whisper-1"
-language = ""              # "" = auto-detect
-# api_key can come from env: OPENAI_API_KEY
-```
-
-Adapters make Hyprvoice extensible without turning it into a framework—just enough structure to keep new providers tidy.
-
-## Config you can tweak mid‑flow
-
-The daemon watches its TOML config and hot‑reloads it. Want to lengthen the typing timeout or switch injection mode? Save the file and try again—no restarts, no flags, no yak‑shaving.
-
-```toml
-[injection]
-mode = "fallback"          # "type" | "clipboard" | "fallback"
-restore_clipboard = true
-wtype_timeout = "5s"
-clipboard_timeout = "3s"
-```
-
-It's a small thing that makes daily life nicer.
-
-## When things go wrong, make it boring
-
-Software fails. What matters is how. Hyprvoice cleans up stale sockets/PIDs on start. Every external tool has a timeout. If direct typing can't reach an app, the clipboard path quietly takes over and your original clipboard is restored in the background. The log tells the story; you keep typing.
-
-And the secret sauce behind that calm? **Go's `context` everywhere.** Every long‑running operation and external call carries a deadline or cancel. Toggle again and the entire pipeline unwinds. A timeout fires and recording stops; sockets close; goroutines exit. On shutdown, WaitGroups drain, contexts propagate, and the system cleans up predictably.
-
-Here's the pattern you'll find all over the codebase:
+Toggle again and the entire pipeline unwinds. A timeout fires and recording stops; sockets close; goroutines exit. On shutdown, WaitGroups drain, contexts propagate, and the system cleans up predictably. Here's the pattern you'll find all over the codebase:
 
 ```go
 runCtx, cancel := context.WithTimeout(ctx, p.config.Recording.Timeout)
 p.setCancel(cancel)
-
+ 
 p.wg.Add(1)
 go p.run(runCtx)
 ```
 
-That one pattern makes the whole system resilient—nothing hangs forever.
+## Modular and Fully Configurable
 
-## Privacy dials you actually control
+Everything in the pipeline is exposed to the user. 
 
-You choose where your audio goes.
+You can swap transcription "brains" without a restart—switching from OpenAI to Groq for sub-second latency.
 
-Prefer convenience? Use the cloud provider and you're a config line away from high‑quality transcription. Prefer privacy or hacking on models? Switch to **whisper.cpp** and keep everything on your machine. Hyprvoice doesn't moralize; it gives you the dial.
+Beyond the backend, you can fine-tune audio sample rates, customize desktop notification messages for every state, and manage a priority-based injection fallback chain. 
 
-## Try it
+This ensures that (in the following example) if direct typing via `wtype` or `ydotool` can't reach a specific application, the clipboard path quietly takes over and restores your original content in the background, keeping the system stable without you ever needing to touch the code.
 
-On Arch:
+```toml
+[transcription]
+provider = "groq-transcription" # Also supports "openai" and "groq-translation"
+api_key = "gsk_..." 
+language = "en"
+model = "whisper-large-v3-turbo"
+
+[injection]
+backends = ["ydotool", "wtype", "clipboard"]
+ydotool_timeout = "5s"
+wtype_timeout = "5s"
+clipboard_timeout = "3s"
+```
+and more...
+
+## Installation and Contributing
+
+Hyprvoice is open-source and currently in Beta. If you're on Arch, you can install it directly from the AUR:
 
 ```bash
-yay -S hyprvoice-bin   # or yay
-hyprvoice install
+yay -S hyprvoice-bin
 ```
 
-Bind the key, speak, and see if it changes your habits. If you're on another distro, grab the release binary or build from source.
+I'm looking for contributors to help with the `whisper.cpp` implementation and much more. If you want to help make voice typing on Linux a first-class experience, check out the repository.
 
-## What I'm doing next
-
-Streaming transcription is the next big step—seeing partial text while you speak makes voice input feel instant. I'm also building the **whisper.cpp** adapter and exploring per‑app rules (for example, automatically disabling injection in password fields).
-
-To grow the project, I'll share and sponsor posts on **X/Twitter**, **Hacker News**, and **Reddit** to recruit testers and contributors.
-
-## Want to help?
-
-If you're new to open source, Hyprvoice is a friendly place to start. Try it on your setup and open an issue with logs if anything feels off. If you're a builder, adapters and tests are the best leverage. If you're just curious, share latency and accuracy numbers from your machine—those reports help guide defaults.
-
-Hyprvoice tries to be invisible. The best compliment would be that you forgot it was running and kept talking.
+[View on GitHub](https://github.com/leonardotrapani/hyprvoice)
