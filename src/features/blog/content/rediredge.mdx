@@ -1,0 +1,131 @@
+---
+title: "Rediredge: Blazing-Fast Domain Redirects Without the DevOps Tax"
+description: "Rediredge is a lightweight, self-hostable domain redirector that pairs a Go data plane with a Next.js control plane. It gives you instant 30x responses without cold starts, automatic HTTPS, and a beautiful dashboard that lets non-technical teammates manage redirects on their own."
+createdAt: "2025-12-26"
+updatedAt: "2025-12-26"
+pinned: false
+new: true
+---
+
+Domain redirects should be invisible infrastructure.
+
+If you want to redirect `cal.acme.com` to your Calendly, you usually have to choose between two equally frustrating paths:
+
+1. **The CloudFront Path:** A forty-click journey through AWS consoles, CNAME records, certificate managers, and YAML incantations that break when you sneeze.
+2. **The "Ask a Developer" Path:** A Slack message to engineering, a ticket in the backlog, and three days of waiting for someone to update a config file.
+
+I was tired of the friction. I wanted something that felt invisible: a system where marketing could spin up `promo.example.com` without pinging the engineering team, where HTTPS just worked, and where the underlying infrastructure could handle millions of requests without blinking. So I built **Rediredge**.
+
+## Not Another Link Shortener
+
+You might be thinking: "Why not just use Bitly?"
+
+Link shorteners solve a different problem. They give you a generic `bit.ly/xyz123` that lives on someone else's domain. That's fine for a tweet, but terrible for your brand.
+
+When you use a link shortener for business-critical redirects, you're handing your SEO juice to a third party. Search engines see `bit.ly`, not `yourcompany.com`. You lose domain authority, you lose brand recognition, and you're at the mercy of another company's uptime.
+
+Rediredge flips the script. Your redirects live on *your* domains. `go.acme.com/demo` points to your demo booking page, and search engines attribute the link equity to you. It's personalized, it's branded, and you own the infrastructure.
+
+## How It Actually Works
+
+The best infrastructure is the infrastructure you forget exists.
+
+When someone on your team needs a new redirect, they shouldn't need to understand DNS propagation or TLS certificates. With Rediredge, you open the dashboard, type the source domain, paste the destination, and hit save. That's it.
+
+Behind the scenes, the system handles TXT-based domain verification, provisions TLS certificates via ACME, and pushes the new rule to a Redis read model that the Go redirector queries in sub-millisecond time. But to the user? It's just a form.
+
+That's the core philosophy: **Redirects are a product concern, not a DevOps ticket.**
+
+## Self-Host or Let Us Handle It
+
+Rediredge is designed for flexibility.
+
+**Option 1: Hosted (zero setup)**
+Use our horizontally-scaled service. We operate the Go redirectors, manage TLS/ACME, and handle the infrastructure. You bring your domains; we handle the rest.
+
+**Option 2: Self-Host (one command)**
+Run the data plane on your own infrastructure while we manage the control plane. Clone the repo, run `docker compose up -d`, and you're live.
+
+```yaml
+# Your server (self-hosted)
+services:
+  redirector:
+    image: ghcr.io/leonardotrapani/rediredge-redirector
+    ports:
+      - "80:5498"
+      - "443:5499"
+    environment:
+      - REDIS_URL=redis://redis:6379
+  redis:
+    image: redis:alpine
+```
+
+The Go redirector handles HTTPS via autocert (ACME HTTP-01), so you don't need a reverse proxy in front. Point your DNS, and certificates provision automatically.
+
+## Why Go + Redis?
+
+Most redirect solutions live on the critical path of your CDN or require expensive managed services. Rediredge takes a different approach.
+
+The architecture splits cleanly into two planes:
+
+* **Control Plane (Next.js):** A dashboard for auth, domains, and redirect rules. It persists canonical configuration to Postgres and publishes a read-optimized view to Redis.
+* **Data Plane (Go):** A stateless redirector that handles TLS via autocert, reads from Redis, and returns instant 30x responses. No cold starts. No Lambda spin-up. Just raw speed.
+
+```
+Client → Go Redirector (TLS + HGET) → 30x Response
+                ↓
+             Redis (read model)
+                ↑
+         Sync Worker ← Postgres ← Dashboard
+```
+
+Because the Go redirector is stateless, you can scale it horizontally by just spinning up more instances behind a load balancer. Redis handles the coordination. The dashboard is never on the hot path.
+
+## Under the Hood: The Outbox Pattern
+
+The secret sauce that keeps everything in sync? The **Outbox Pattern**.
+
+Every time you create or update a redirect in the dashboard, the change doesn't go directly to Redis. Instead, it lands in an outbox table in Postgres. A sync worker picks up these events and applies them to Redis idempotently. Each rule carries a `version` field, and the worker only applies updates if the incoming version is newer.
+
+This gives you:
+
+* **Durability:** If Redis goes down, events stay in the outbox and retry with backoff.
+* **Consistency:** No split-brain scenarios where the dashboard and redirector disagree.
+* **Rebuild capability:** A job can truncate and repopulate the Redis namespace from Postgres at any time.
+
+Here's what a redirect rule looks like in the Redis read model:
+
+```json
+{
+  "redirect:example.com:cal": {
+    "to": "https://calendly.com/acme",
+    "status": 308,
+    "preservePath": false,
+    "preserveQuery": true,
+    "enabled": true,
+    "version": 3
+  }
+}
+```
+
+The lookup is a single `HGET`. No parsing. No joins. Just instant responses.
+
+## Installation and Contributing
+
+Rediredge is open-source and currently in pre-alpha. If you want to try it out:
+
+```bash
+# Clone the repo
+git clone https://github.com/LeonardoTrapani/rediredge.git
+cd rediredge
+
+# Install dependencies
+bun install
+
+# Start dev environment
+bun run dev
+```
+
+Contributions are welcome. If you want to help make domain redirects a first-class experience, check out the repository.
+
+[View on GitHub](https://github.com/leonardotrapani/rediredge?utm_source=leotrapani.com&utm_medium=referral&utm_campaign=portfolio)
