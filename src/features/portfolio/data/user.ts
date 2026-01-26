@@ -31,13 +31,13 @@ export const USER: User = {
     },
   ],
   about: `
-19 y/o software developer, entrepreneur, and undergrad student at Bocconi. I turn ideas into reality: yours and mine.
+19 y/o software developer, entrepreneur, and undergrad student at Bocconi.
 
-Started coding young, landed first internship at 16. Joined [Datapizza](https://datapizza.tech) as early employee (#8), watched it scale to 90+ employees while leading the team and the technical strategy of [Jobs](https://datapizza.tech/jobs/).
+Started coding young, landed first internship at 16. Joined [Datapizza](https://datapizza.tech) as early employee (#8), watched it scale to 90+ employees while leading the team and the technical strategy of [Jobs](https://datapizza.tech/jobs/), and all internal tools.
 
-On the side, I've shipped products that people actually use:
+On the side, I study in university, and build Open Source projects:
 - **[Rediredge](https://rediredge.app)**: blazing-fast self-hostable domain redirector built with Go, Next.js, Redis. Horizontally-scalable architecture with analytics pipeline
-- **[Hyprvoice](https://github.leotrapani.com/hyprvoice)**: voice-powered typing for Linux Wayland/Hyprland. 1k+ AUR users, active open source contributor
+- **[Hyprvoice](https://github.leotrapani.com/hyprvoice)**: voice-powered typing for Linux Wayland/Hyprland. 100+ github starts, active open source contributors
 - **[Nutrivetpet](https://nutrivetpet.com)**: pet nutrition platform with 3k+ monthly paying users (equity stake for technical leadership)
 
 Deep into systems: Go, infrastructure, scalability, Docker. Focusing on TypeScript/Next.js/React for full-stack execution.

@@ -45,7 +45,9 @@ export function SiteHeader() {
 
         <div className="flex items-center *:first:mr-2">
           <CommandMenu posts={posts} />
+          {/**
           <GithubRepoStarsFetch />
+	  **/}
           <span className="mx-2 flex h-4 w-px bg-border" />
           <ToggleTheme />
           <MobileNav className="sm:hidden" items={MAIN_NAV} />

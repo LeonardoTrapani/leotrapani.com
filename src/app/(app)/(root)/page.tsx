@@ -44,19 +44,13 @@ export default function Page() {
         <GitHubContributions />
         <Separator />
 
+        <Projects />
+        <Separator />
+
         {/* <TestimonialsMarquee /> */}
         {/* <Separator /> */}
 
-        <TeckStack />
-        <Separator />
-
-        <Blog />
-        <Separator />
-
         <Experiences />
-        <Separator />
-
-        <Projects />
         <Separator />
 
         {/* <Awards /> */}
@@ -64,6 +58,12 @@ export default function Page() {
         {/**/}
         {/* <Certifications /> */}
         {/* <Separator /> */}
+
+        <Blog />
+        <Separator />
+
+        <TeckStack />
+        <Separator />
       </div>
     </>
   );
