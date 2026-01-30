@@ -14,17 +14,11 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: "https://linkedin.com/in/leonardotrapani",
   },
   {
-    icon: "/images/links/cal.webp",
-    title: "Calendar",
-    description: "Book a 30min call",
-    href: "https://cal.leotrapani.com",
+    icon: "/images/links/x.webp",
+    title: "X",
+    description: "@leo_trapani",
+    href: "https://x.com/leo_trapani",
   },
-  // {
-  //   icon: "images/links/x.webp",
-  //   title: "X (Formerly Twitter)",
-  //   description: "@leo_trapani",
-  //   href: "https://x.com/leo_trapani",
-  // },
   {
     icon: "/images/links/youtube.webp",
     title: "YouTube",
