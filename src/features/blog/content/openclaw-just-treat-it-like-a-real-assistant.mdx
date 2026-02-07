@@ -1,0 +1,161 @@
+---
+title: "OpenClaw: just treat it like a real assistant"
+description: "Perimeter security is the easy part. A practical framework to run OpenClaw with real agency without handing it your identity."
+category: "security"
+new: true
+pinned: false
+createdAt: "2026-02-07"
+updatedAt: "2026-02-07"
+---
+
+## The secure OpenClaw setup
+
+It is possible to make a secure OpenClaw setup, even if you give it credit card access.
+
+But most “secure OpenClaw setups” are not secure.
+
+I keep seeing posts like:
+
+> “I deployed OpenClaw on a VPS, put it behind Cloudflare Tunnel, no ports open, we’re safe.”
+
+Cool. That solves one problem. (Reference: Cloudflare’s write-up on the “VPS + Tunnel” approach: https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/)
+
+Then the same people give the agent access to their primary inbox, their main Google account, random API keys, and whatever else it asks for. At that point, the tunnel is security theater.
+
+Now the real question is: would you do that with a real assistant?
+
+Would you give them your personal inbox with full send access? Your main Google account? Your primary credit card? Your entire computer?
+
+Of course not.
+
+That is the whole philosophy here: treat OpenClaw like a real assistant. Useful, trusted, but not you.
+
+A real assistant could go crazy one day and start sending emails to everyone saying you’re a terrible person.
+
+That would be catastrophic, but it would not be *you*. It would be your assistant.
+
+Most AI setups accidentally collapse that boundary by giving the agent your main identity, your main inbox, your main money.
+
+Even worse, this is not theoretical. In the past few days multiple reports came out about **malicious OpenClaw skills on ClawHub**, including cases where the **most-downloaded** add-on was described as a malware delivery vehicle.
+
+That’s the point: once you install skills, you’re not only securing a VPS. You’re managing a supply chain that can execute with real permissions.
+
+So the question isn’t “is my server reachable?”. The question is: if one input, one skill, or one token goes bad, can the agent still do useful work without being able to impersonate you?
+
+## A realistic threat model (because yes, it happens)
+
+An AI assistant is software that:
+
+- consumes untrusted input (email, web pages, documents, chats)
+- makes decisions under ambiguity
+- calls tools using credentials
+
+That’s a nasty combination of:
+
+1) **uncertainty** (LLMs can misunderstand)
+2) **power** (tools can do real damage)
+
+A key risk people point out is **excessive agency**, but I think that framing is slightly misleading.
+
+Agency is the whole point. You *want* the agent to be able to do things. Browse the web. Touch the filesystem. Even have credit card access.
+
+The real issue is what that agency can do **to your real identity and your real assets** once something gets penetrated.
+
+If the agent gets prompt-injected or compromised, your goal is that your online life is not over. It should not be able to email people from your main account, drain your main card, or pull the keys to your entire digital life off your primary machine.
+
+The fix is not “trust the model more”. The fix is: **least privilege + separation + human-in-the-loop**.
+
+So you need a setup that looks more like “a company with separation of duties”, even if it’s just you.
+
+## My setup: separate everything (for real)
+
+### 1) Separate email and calendar (Workspace account)
+
+I keep two distinct worlds:
+
+- my personal account: my life
+- the AI account (Google Workspace): the assistant
+
+The assistant lives in the Workspace account.
+
+When I want it to see my personal email, I **forward** specific emails to the AI inbox (or I just set up auto-forwarding). I **share** my calendar and it creates events and invite me.
+
+Rule of thumb: the assistant should **never** have write access to my main accounts. No “just this once”, no “for convenience.”
+
+Why this matters:
+
+- prompt injection in a random email can’t make it reply from your main identity
+- if the AI account gets compromised, revoking access is a clean cut
+- you can keep permissions explicit: what it can read, what it can write, and where
+
+### 2) Password manager: a dedicated vault + service account access
+
+Secrets should not live in prompts. Full stop.
+
+I use 1Password with:
+
+- a **dedicated vault** just for the assistant
+- access via a **service account token**, not human credentials
+
+This gives you two huge wins:
+
+- clear scope: the agent can only see what’s inside that vault
+- easy revocation: invalidate the token, and the blast radius collapses
+
+More generally: the assistant shouldn’t “know passwords”. It should **fetch secrets just-in-time**, narrowly scoped to the tool it’s using.
+
+Set up openai whisper? Say "Hey I added the Openai api key to your 1Password vault, please set up whisper"
+
+### 3) Yes, you can give an agent a credit card
+
+You’d think you’d never find “give it a credit card” in a security article.
+
+But if you follow this framework, you can.
+
+Give the agent a **virtual card** with a hard budget limit. Put the card details in the agent’s **dedicated 1Password vault**. Now the agent can pay for things when it needs to, but the worst-case damage is capped.
+
+### 5) Separate GitHub identity (and every other important accounts)
+
+If the agent writes code (OpenCode, Claude Code, whatever you use), it should do it from its own GitHub account.
+
+Give it an email (the Google workspace one in this example), create a dedicated GitHub identity, and have it open PRs from that account. It should never have access to your main GitHub account.
+
+This gives you a clean boundary: if it goes off the rails, it’s a compromised contributor, not a compromised you. You could push directly to main and delete everything, your assistant couldn't.
+
+### 6) Human-in-the-loop for irreversible actions
+
+Anything irreversible (or high-impact) should require either:
+
+- explicit confirmation, or
+- a workflow that goes through a staging area (draft) and only gets executed after review
+
+Email is the obvious example:
+
+- the agent can draft
+- you decide whether to send
+
+This will prevent most disasters, but it’s not a silver bullet.
+
+We can never be sure prompt injection won’t slip through email or web content, even if the agent is instructed to “always go through you.”
+
+That’s why you do all the steps above. The goal is that even when something goes wrong, the agent still can’t impersonate you, drain your money, or walk away with the keys to your life.
+
+This is the zero-trust idea applied to agents: **the LLM should not be the final authority on permissions.**
+
+## Closing
+
+None of this is bulletproof.
+
+Prompt injection will always be a problem. Supply chain attacks will keep happening. Models will misunderstand. Tools will fail.
+
+The goal is not perfection. The goal is survivability.
+
+If things go wrong, you want a setup where:
+
+- the agent cannot send email from your main identity
+- the agent cannot drain your main card
+- the agent cannot quietly exfiltrate the keys to your entire digital life
+
+That’s what separation, least privilege, and human-in-the-loop give you. Treat it like a real assistant: trusted, sure, but still new.
+
+Give it tools to work, not the keys to your house.
