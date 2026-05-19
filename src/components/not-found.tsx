@@ -1,9 +1,9 @@
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 
+import { SharkMark } from "@/components/shark-mark";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { SharkMark } from "@/components/shark-mark";
 
 export function NotFound({ className }: { className?: string }) {
   return (

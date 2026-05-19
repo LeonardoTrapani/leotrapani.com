@@ -32,7 +32,8 @@ export async function GET() {
                 tw="w-40 h-40 rounded-full"
                 style={{
                   border: "2px solid rgba(255, 255, 255, 0.2)",
-                  boxShadow: "0 0 0 4px black, 0 0 0 6px rgba(255, 255, 255, 0.1)",
+                  boxShadow:
+                    "0 0 0 4px black, 0 0 0 6px rgba(255, 255, 255, 0.1)",
                 }}
               />
             </div>
@@ -203,7 +204,7 @@ export async function GET() {
                     <path d="M3 10h18" />
                   </svg>
                 </div>
-                <span tw="text-base">19 years old</span>
+                <span tw="text-base">20 years old</span>
               </div>
             </div>
           </div>

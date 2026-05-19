@@ -1,8 +1,4 @@
-import {
-  Calendar,
-  GlobeIcon,
-  MapPinIcon,
-} from "lucide-react";
+import { Calendar, GlobeIcon, MapPinIcon } from "lucide-react";
 
 import { USER } from "@/features/portfolio/data/user";
 import { urlToName } from "@/utils/url";
@@ -46,7 +42,7 @@ export function Overview() {
             href={USER.website}
           />
 
-          <IntroItem icon={Calendar} content={"19 years old"} />
+          <IntroItem icon={Calendar} content={"20 years old"} />
         </div>
       </PanelContent>
 
