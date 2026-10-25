@@ -12,7 +12,7 @@ const { items } = Astro.props;
   {items.map((item) => (
     <li>
       <a href={item.href}>{item.name}</a>
-      {item.description && <p class="muted">{item.description}</p>}
+      {item.description && <span class="muted">{item.description}</span>}
     </li>
   ))}
 </ul>
@@ -21,6 +21,12 @@ const { items } = Astro.props;
   ul {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0.75rem;
+  }
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.75rem;
   }
 </style>

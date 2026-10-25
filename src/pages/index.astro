@@ -2,7 +2,6 @@
 import EntryList from "@/components/EntryList.astro";
 import Section from "@/components/Section.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { BUILDING } from "@/data/building";
 import { PROJECTS } from "@/data/projects";
 import { SITE, SOCIAL_LINKS } from "@/data/site";
 import { getPinnedPosts, postUrl } from "@/lib/posts";
@@ -14,7 +13,7 @@ const writing = [
     href: postUrl(post),
     description: post.data.summary,
   })),
-  { name: "All writing", href: "/blog", description: "Everything, by year." },
+  { name: "All writing", href: "/blog" },
 ];
 ---
 
@@ -31,17 +30,13 @@ const writing = [
     </p>
   </div>
 
-  <div class="columns">
-    <Section title="Building">
-      <EntryList items={BUILDING} />
-    </Section>
-    <Section title="Projects">
-      <EntryList items={PROJECTS} />
-    </Section>
-    <Section title="Writing">
-      <EntryList items={writing} />
-    </Section>
-  </div>
+  <Section title="Projects" prominent>
+    <EntryList items={PROJECTS} />
+  </Section>
+
+  <Section title="Writing" prominent>
+    <EntryList items={writing} />
+  </Section>
 
   <Section title="Now" prominent>
     <p>
@@ -64,8 +59,7 @@ const writing = [
               ? " and "
               : "."}
         </>
-      ))}{" "}
-      My <a href={SITE.resumeUrl}>resume</a> is here.
+      ))}
     </p>
   </Section>
 </BaseLayout>
@@ -76,23 +70,5 @@ const writing = [
     flex-direction: column;
     gap: var(--space);
     margin-bottom: 4rem;
-  }
-
-  .columns {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
-  }
-
-  .columns > :global(section + section) {
-    margin-top: 0;
-  }
-
-  @media (max-width: 640px) {
-    .columns {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
   }
 </style>

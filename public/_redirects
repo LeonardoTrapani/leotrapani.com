@@ -1,6 +1,13 @@
 /rss /rss.xml 301
+/resume.pdf / 301
+/blog/dx /blog 301
+/blog/hyprvoice /blog 301
+/blog/openclaw-just-treat-it-like-a-real-assistant /blog 301
+/blog/rediredge /blog 301
+/blog/salaries /blog 301
+/blog/the-os-nightmare /blog 301
 /blog/shimmering-text /blog 301
-/blog.mdx/:slug /blog/:slug 301
+/blog.mdx/* /blog 301
 /components / 301
 /components/* / 301
 /vcard / 301
