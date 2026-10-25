@@ -5,6 +5,10 @@ import * as Output from "alchemy/Output";
 import * as Effect from "effect/Effect";
 import * as Layer from "effect/Layer";
 
+import { DNS_RECORDS } from "./dns";
+
+const DOMAIN = "leotrapani.com";
+
 // Set by the CI workflow on pull_request events.
 const pullRequest = process.env.PULL_REQUEST
   ? Number(process.env.PULL_REQUEST)
@@ -36,6 +40,21 @@ export default Alchemy.Stack(
   },
   Effect.gen(function* () {
     const site = yield* Website;
+    const stage = yield* Alchemy.Stage;
+
+    // Only production owns the real zone; PR previews stay on workers.dev.
+    if (stage === "prod") {
+      const zone = yield* Cloudflare.Zone.Zone("Zone", { name: DOMAIN });
+
+      for (const [id, record] of Object.entries(DNS_RECORDS)) {
+        yield* Cloudflare.DNS.Record(`Dns${id}`, {
+          zoneId: zone.zoneId,
+          ...record,
+        });
+      }
+
+      return { url: site.url, nameServers: zone.nameServers };
+    }
 
     if (pullRequest) {
       // A stable logical ID keeps one comment per PR, edited on every push.

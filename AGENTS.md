@@ -14,6 +14,7 @@ Personal site and blog of Leonardo Trapani (@leo_trapani). The design goal is ca
 
 ```
 alchemy.run.ts          Cloudflare stack (Effect program); posts the PR preview comment in CI
+dns.ts                  DNS records for the leotrapani.com zone (prod stage only)
 stacks/github.ts        One-off stack that mints the CI Cloudflare token into GitHub secrets
 .github/workflows/ci.yml Checks, PR previews (pr-N stages), prod deploy from main, preview cleanup
 astro.config.ts         Astro config (site URL, sitemap, Shiki themes)
@@ -34,6 +35,7 @@ src/
 - **Edit bio or sections**: intro and Now prose in `src/components/home/` (llms.txt renders them too), layout in `src/pages/index.astro`, structured data in `src/data/`.
 - **Add a post**: new `.md` file in `src/content/blog/` with `title`, `description`, `createdAt` (`YYYY-MM-DD`), optional `summary` (short line for the home Writing column and the OG card), `updatedAt`, `pinned`, `draft`. Posts are served at `/blog/<file-name>`. Drafts show up in `pnpm dev` only; production builds skip them.
 - **Retire a URL**: add a line to `public/_redirects`.
+- **Change DNS**: edit `dns.ts`; the prod deploy from `main` applies it. Keep the Rediredge wildcard DNS-only.
 
 ## Commands
 

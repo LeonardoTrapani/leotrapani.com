@@ -39,6 +39,22 @@ export default Alchemy.Stack(
           ],
           resources: { [`com.cloudflare.api.account.${accountId}`]: "*" },
         },
+        {
+          effect: "allow",
+          // Production manages the leotrapani.com zone, its DNS records and
+          // the Worker custom domain.
+          permissionGroups: [
+            "Zone Read",
+            "Zone Write",
+            "DNS Write",
+            "Workers Routes Write",
+          ],
+          resources: {
+            [`com.cloudflare.api.account.${accountId}`]: {
+              "com.cloudflare.api.account.zone.*": "*",
+            },
+          },
+        },
       ],
     });
 
