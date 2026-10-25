@@ -56,10 +56,11 @@ export default Alchemy.Stack(
         });
       }
 
-      // Cookieless Web Analytics; Cloudflare injects the beacon at the edge.
+      // Cookieless Web Analytics. Edge injection does not reach Worker
+      // responses, so BaseLayout embeds the beacon with this site's token.
       yield* Cloudflare.Rum.Site("WebAnalytics", {
         zoneTag: zone.zoneId,
-        autoInstall: true,
+        autoInstall: false,
       });
 
       return { url: site.url, nameServers: zone.nameServers };

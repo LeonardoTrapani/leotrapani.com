@@ -7,6 +7,8 @@ export const SITE = {
   email: "ciao@leotrapani.com",
   locale: "en",
   twitterHandle: "@leo_trapani",
+  // Public Cloudflare Web Analytics token; it ships in every page.
+  webAnalyticsToken: "258adf100be042ca87a40265a5714df5",
 } as const;
 
 export type Link = {
