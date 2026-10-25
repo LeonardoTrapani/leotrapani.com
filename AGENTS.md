@@ -17,7 +17,7 @@ alchemy.run.ts          Cloudflare stack (Effect program)
 astro.config.ts         Astro config (site URL, sitemap, Shiki themes)
 public/                 Static files; _redirects holds legacy URL redirects
 src/
-├── components/         SiteHeader, BackLink, SiteFooter, Section, EntryList, PostList
+├── components/         SiteHeader, BackLink, SiteFooter, Section, EntryList, PostList; home/ holds the Intro and Now prose (also rendered into llms.txt)
 ├── content/blog/       Blog posts (Markdown)
 ├── content.config.ts   Blog collection schema
 ├── data/               site.ts, work.ts, projects.ts: the editable content
@@ -29,7 +29,7 @@ src/
 
 ## Common tasks
 
-- **Edit bio or sections**: `src/pages/index.astro`; structured data lives in `src/data/`.
+- **Edit bio or sections**: intro and Now prose in `src/components/home/` (llms.txt renders them too), layout in `src/pages/index.astro`, structured data in `src/data/`.
 - **Add a post**: new `.md` file in `src/content/blog/` with `title`, `description`, `createdAt` (`YYYY-MM-DD`), optional `summary` (short line for the home Writing column and the OG card), `updatedAt`, `pinned`, `draft`. Posts are served at `/blog/<file-name>`. Drafts show up in `pnpm dev` only; production builds skip them.
 - **Retire a URL**: add a line to `public/_redirects`.
 
