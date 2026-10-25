@@ -44,13 +44,18 @@ export default Alchemy.Stack(
         },
         {
           effect: "allow",
-          // Production manages the leotrapani.com zone, its DNS records and
-          // the Worker custom domain.
+          // Production manages the leotrapani.com zone, its DNS records, the
+          // Worker custom domain and the www redirect rule. Cloudflare's
+          // Write groups do not include Read, so both are listed.
           permissionGroups: [
             "Zone Read",
             "Zone Write",
+            "DNS Read",
             "DNS Write",
+            "Workers Routes Read",
             "Workers Routes Write",
+            "Dynamic URL Redirects Read",
+            "Dynamic URL Redirects Write",
           ],
           resources: {
             [`com.cloudflare.api.account.${accountId}`]: {
