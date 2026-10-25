@@ -2,6 +2,8 @@
 import "@fontsource-variable/inter";
 import "@fontsource/newsreader/400-italic.css";
 import "@/styles/global.css";
+import interUrl from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
+import newsreaderItalicUrl from "@fontsource/newsreader/files/newsreader-latin-400-italic.woff2?url";
 
 import BackLink from "@/components/BackLink.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
@@ -41,6 +43,21 @@ const ogImageUrl = new URL(ogImage, Astro.site);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
+    <!-- Fetch both faces with the HTML so text never swaps fonts after paint. -->
+    <link
+      rel="preload"
+      href={interUrl}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={newsreaderItalicUrl}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <meta name="description" content={description} />
     {noIndex ? (
       <meta name="robots" content="noindex" />
