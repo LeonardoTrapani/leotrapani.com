@@ -56,6 +56,12 @@ export default Alchemy.Stack(
         });
       }
 
+      // Cookieless Web Analytics; Cloudflare injects the beacon at the edge.
+      yield* Cloudflare.Rum.Site("WebAnalytics", {
+        zoneTag: zone.zoneId,
+        autoInstall: true,
+      });
+
       return { url: site.url, nameServers: zone.nameServers };
     }
 

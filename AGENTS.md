@@ -14,7 +14,7 @@ Personal site and blog of Leonardo Trapani (@leo_trapani). The design goal is ca
 
 ```
 alchemy.run.ts          Cloudflare stack (Effect program); posts the PR preview comment in CI
-dns.ts                  DNS records for the leotrapani.com zone (prod stage only)
+dns.ts                  DNS records for the leotrapani.com zone (prod stage only); the zone also gets cookieless Web Analytics
 stacks/github.ts        One-off stack that mints the CI Cloudflare token into GitHub secrets
 .github/workflows/ci.yml Checks, PR previews (pr-N stages), prod deploy from main, preview cleanup
 astro.config.ts         Astro config (site URL, sitemap, Shiki themes)
