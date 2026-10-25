@@ -34,7 +34,9 @@ export default Alchemy.Stack(
             "Workers Scripts Write",
             // The Alchemy state store binds a Secrets Store secret on every run.
             "Secrets Store Write",
-            // Web Analytics (RUM) sites are managed under account settings.
+            // Web Analytics (RUM) sites are managed under account settings;
+            // listing them needs Read, which Write does not include.
+            "Account Settings Read",
             "Account Settings Write",
             "Workers Tail Read",
           ],
