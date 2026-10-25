@@ -1,7 +1,7 @@
 /**
  * DNS records for leotrapani.com, copied from the previous Vercel DNS zone.
- * The apex A/ALIAS and CAA records Vercel managed are left out: the site is
- * served by the Worker's custom domain and Cloudflare issues its own certs.
+ * The apex and www are not here: the Worker's custom domain owns them (see
+ * alchemy.run.ts), and Cloudflare issues their certificates.
  */
 type DnsRecord = {
   name: string;
@@ -12,14 +12,6 @@ type DnsRecord = {
 );
 
 export const DNS_RECORDS: Record<string, DnsRecord> = {
-  // Temporary: keeps the apex on the old Vercel site while the nameservers
-  // move. Replaced by the Worker custom domain once the zone is active.
-  VercelApex: {
-    type: "CNAME",
-    name: "@",
-    content: "dfef3ad1819bdede.vercel-dns-016.com",
-    comment: "Temporary bridge to Vercel during the nameserver switch",
-  },
   // Google Workspace: mail for ciao@leotrapani.com and domain verification.
   GoogleMx: {
     type: "MX",
@@ -54,8 +46,8 @@ export const DNS_RECORDS: Record<string, DnsRecord> = {
     content: "v=DMARC1; p=none;",
     comment: "DMARC",
   },
-  // Rediredge serves every other subdomain (www included) with its own TLS,
-  // so the wildcard must stay DNS-only.
+  // Rediredge serves every other subdomain with its own TLS, so the wildcard
+  // must stay DNS-only.
   RediredgeWildcard: {
     type: "CNAME",
     name: "*",
@@ -67,12 +59,6 @@ export const DNS_RECORDS: Record<string, DnsRecord> = {
     name: "_rediredge",
     content: "rediredge-verify=fc6c6fa2-26b7-4fd1-8a20-71f97545366c",
     comment: "Rediredge",
-  },
-  EffectTalk: {
-    type: "CNAME",
-    name: "effect",
-    content: "effect-talk.pages.dev",
-    comment: "Effect Milan talk",
   },
   // Resend sending domain notifications.leotrapani.com.
   ResendSpf: {
