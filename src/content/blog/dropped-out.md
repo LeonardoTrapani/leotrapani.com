@@ -4,7 +4,6 @@ description: Why I dropped out of Bocconi, and what university means in the AI e
 summary: University in the AI era.
 createdAt: 2026-10-25
 pinned: true
-draft: true
 ---
 
-Draft.
+Coming soon.
