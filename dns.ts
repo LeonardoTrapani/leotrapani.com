@@ -60,27 +60,6 @@ export const DNS_RECORDS: Record<string, DnsRecord> = {
     content: "rediredge-verify=fc6c6fa2-26b7-4fd1-8a20-71f97545366c",
     comment: "Rediredge",
   },
-  // Resend sending domain notifications.leotrapani.com.
-  ResendSpf: {
-    type: "TXT",
-    name: "send.notifications",
-    content: "send.notifications",
-    comment: "Resend (value copied as-is from Vercel)",
-  },
-  ResendMx: {
-    type: "MX",
-    name: "send.notifications",
-    content: "feedback-smtp.eu-west-1.amazonses.com",
-    priority: 10,
-    comment: "Resend",
-  },
-  ResendDkim: {
-    type: "TXT",
-    name: "resend._domainkey.notifications",
-    content:
-      "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCgV8jw3w9sHjqwMwM2WrWd7ZNUXj7rD3ZAUfn8vz+u+lYZzksiqj7sqYDSMqd9JQad03DHOUinaYipg2rtQaRXAoYg51tJ5lZzl9bCLVZM+lIH+50pauwLaTBAzHRRyz2OkEloWe0XuLQPzRgATnS7nenB5WsVyOdmjL5ICXHYMwIDAQAB",
-    comment: "Resend",
-  },
   // Plunk sends through Amazon SES.
   PlunkDkim1: {
     type: "CNAME",
