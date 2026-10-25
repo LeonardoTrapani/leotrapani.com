@@ -3,7 +3,11 @@ import { getCollection, type CollectionEntry } from "astro:content";
 export type Post = CollectionEntry<"blog">;
 
 export async function getPosts(): Promise<Post[]> {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  // Drafts are built in dev so they can be previewed and linked locally.
+  const posts = await getCollection(
+    "blog",
+    ({ data }) => import.meta.env.DEV || !data.draft
+  );
   return posts.sort(
     (a, b) => b.data.createdAt.getTime() - a.data.createdAt.getTime()
   );
@@ -12,6 +16,11 @@ export async function getPosts(): Promise<Post[]> {
 export async function getPinnedPosts(): Promise<Post[]> {
   const posts = await getPosts();
   return posts.filter((post) => post.data.pinned);
+}
+
+export async function getPost(id: string): Promise<Post | undefined> {
+  const posts = await getPosts();
+  return posts.find((post) => post.id === id);
 }
 
 /** Static paths shared by every per-post route (article page, OG image). */
