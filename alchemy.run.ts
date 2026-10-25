@@ -46,7 +46,7 @@ export default Alchemy.Stack(
         body: Output.interpolate`
           **Preview:** ${site.url}
 
-          Built from ${process.env.GITHUB_SHA?.slice(0, 7) ?? "local"}.
+          Built from ${process.env.COMMIT_SHA?.slice(0, 7) ?? "local"}.
         `,
       });
     }
