@@ -17,7 +17,7 @@ alchemy.run.ts          Cloudflare stack (Effect program)
 astro.config.ts         Astro config (site URL, sitemap, Shiki themes)
 public/                 Static files; _redirects holds legacy URL redirects
 src/
-├── components/         SiteHeader, SiteFooter, Section, PostList
+├── components/         SiteHeader, SiteFooter, Section, EntryList, PostList
 ├── content/blog/       Blog posts (Markdown)
 ├── content.config.ts   Blog collection schema
 ├── data/               site.ts, work.ts, projects.ts: the editable content

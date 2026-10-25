@@ -7,7 +7,6 @@ export const SITE = {
   email: "ciao@leotrapani.com",
   locale: "en",
   twitterHandle: "@leo_trapani",
-  resumeUrl: "/resume.pdf",
 } as const;
 
 export type Link = {
