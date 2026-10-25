@@ -24,6 +24,7 @@ const { Content } = await render(post);
   <article>
     <header>
       <h1>{post.data.title}</h1>
+      <p class="muted">{post.data.description}</p>
       <time class="muted" datetime={post.data.createdAt.toISOString()}>
         {formatLongDate(post.data.createdAt)}
       </time>
@@ -40,6 +41,12 @@ const { Content } = await render(post);
 <style>
   header {
     margin-bottom: 3rem;
+  }
+
+  time {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: var(--text-sm);
   }
 
   h1 {
