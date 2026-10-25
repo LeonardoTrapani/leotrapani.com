@@ -2,8 +2,8 @@ import type { Entry } from "./entry";
 
 export const BUILDING: Entry[] = [
   {
-    name: "Dual",
+    name: "Datapizza",
     href: "https://datapizza.tech",
-    description: "Agent platform for enterprises, at Datapizza.",
+    description: "Technical lead on Dual, our agent platform.",
   },
 ];

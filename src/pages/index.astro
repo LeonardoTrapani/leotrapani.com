@@ -5,9 +5,11 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { BUILDING } from "@/data/building";
 import { PROJECTS } from "@/data/projects";
 import { SITE, SOCIAL_LINKS } from "@/data/site";
-import { getPinnedPosts, postUrl } from "@/lib/posts";
+import { getPinnedPosts, getPost, postUrl } from "@/lib/posts";
 
 const pinned = await getPinnedPosts();
+// Linked only once the post is published, so production never points at a draft.
+const dropoutPost = await getPost("dropout");
 const writing = [
   ...pinned.map((post) => ({
     name: post.data.title,
@@ -22,13 +24,9 @@ const writing = [
   <div class="intro">
     <p>
       <em>Building startups in Italy.</em> Founding engineer at{" "}
-      <a href="https://datapizza.tech">Datapizza</a>, where I lead Dual, our
-      agent platform, on the technical side. We bring AI into Italian companies,
-      and in July we raised a €10M Series A to do it at scale.
-    </p>
-    <p>
-      From 2022 to 2025 I also freelanced, taking products from zero to
-      production for startups and small teams.
+      <a href="https://datapizza.tech">Datapizza</a>, the biggest AI deployment
+      company in Italy. In July we raised a €10M Series A to bring AI into
+      Italian companies at scale.
     </p>
   </div>
 
@@ -45,18 +43,37 @@ const writing = [
   </div>
 
   <Section title="Now" prominent>
-    <div class="now">
+    <div class="stack">
       <p>
-        I dropped out of Bocconi to work on this full time. Most of my days go
-        into Dual: making agents reliable enough that real companies run them in
-        production, not just in a demo.
+        I{" "}
+        {dropoutPost ? (
+          <a href={postUrl(dropoutPost)}>dropped out</a>
+        ) : (
+          "dropped out"
+        )}{" "}
+        of Bocconi to work on this full time. Most of my days go into Dual at
+        Datapizza: a platform for building agents and automations that are
+        reliable, observable and actually deployable inside a company. I focus
+        on strategic technical vision, implementation and team management.
       </p>
       <p>
-        The long-term plan is to build startups here in Italy, and Datapizza is
-        where I'm learning how. On the side I ship open-source and train MMA.
-        Twenty years old, living in Milan.
+        The long-term plan is to build startups in Italy, and it starts now at
+        Datapizza, bringing AI into Italian companies and the wider market.
+        Meanwhile I'm going deep into the Italian startup ecosystem, so I'm
+        ready when it's my turn.
+      </p>
+      <p>
+        On the side I ship open-source, as a self-confessed Effect nerd, and
+        train MMA. Twenty years old, living in Milan.
       </p>
     </div>
+  </Section>
+
+  <Section title="Before" prominent>
+    <p>
+      From 2022 to 2025 I freelanced, taking products from zero to production
+      for startups and small teams.
+    </p>
   </Section>
 
   <Section title="Connect" prominent>
@@ -79,7 +96,7 @@ const writing = [
 
 <style>
   .intro,
-  .now {
+  .stack {
     display: flex;
     flex-direction: column;
     gap: var(--space);

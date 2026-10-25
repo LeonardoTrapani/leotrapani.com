@@ -30,7 +30,7 @@ src/
 ## Common tasks
 
 - **Edit bio or sections**: `src/pages/index.astro`; structured data lives in `src/data/`.
-- **Add a post**: new `.md` file in `src/content/blog/` with `title`, `description`, `createdAt` (`YYYY-MM-DD`), optional `updatedAt`, `pinned`, `draft`. Posts are served at `/blog/<file-name>`.
+- **Add a post**: new `.md` file in `src/content/blog/` with `title`, `description`, `createdAt` (`YYYY-MM-DD`), optional `updatedAt`, `pinned`, `draft`. Posts are served at `/blog/<file-name>`. Drafts show up in `pnpm dev` only; production builds skip them.
 - **Retire a URL**: add a line to `public/_redirects`.
 
 ## Commands

@@ -14,13 +14,6 @@ export const WORK: Role[] = [
     start: 2023,
   },
   {
-    organization: "Bocconi University",
-    href: "https://unibocconi.it",
-    title: "BSc Economics, Management and Computer Science",
-    start: 2025,
-    end: 2028,
-  },
-  {
     organization: "Freelance",
     title: "Software Engineer",
     start: 2022,
