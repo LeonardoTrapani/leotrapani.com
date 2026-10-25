@@ -34,7 +34,8 @@ export default Alchemy.Stack(
             "Workers Scripts Write",
             // The Alchemy state store binds a Secrets Store secret on every run.
             "Secrets Store Write",
-            "Account Settings Read",
+            // Web Analytics (RUM) sites are managed under account settings.
+            "Account Settings Write",
             "Workers Tail Read",
           ],
           resources: { [`com.cloudflare.api.account.${accountId}`]: "*" },
