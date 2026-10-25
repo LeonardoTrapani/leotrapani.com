@@ -35,7 +35,7 @@ src/
 - **Edit bio or sections**: intro and Now prose in `src/components/home/` (llms.txt renders them too), layout in `src/pages/index.astro`, structured data in `src/data/`.
 - **Add a post**: new `.md` file in `src/content/blog/` with `title`, `description`, `createdAt` (`YYYY-MM-DD`), optional `summary` (short line for the home Writing column and the OG card), `updatedAt`, `pinned`, `draft`. Posts are served at `/blog/<file-name>`. Drafts show up in `pnpm dev` only; production builds skip them.
 - **Retire a URL**: add a line to `public/_redirects`.
-- **Change DNS**: edit `dns.ts`; the prod deploy from `main` applies it. Keep the Rediredge wildcard DNS-only.
+- **Change DNS**: edit `dns.ts`; the prod deploy from `main` applies it. Keep the Rediredge wildcard DNS-only. The apex and `www` (301 to the apex) belong to the Website's custom domain in `alchemy.run.ts`.
 
 ## Commands
 

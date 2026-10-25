@@ -14,24 +14,6 @@ const pullRequest = process.env.PULL_REQUEST
   ? Number(process.env.PULL_REQUEST)
   : undefined;
 
-export const Website = Cloudflare.Website.Astro("Website", {
-  astro: { output: "static" },
-  // OG images are rendered with native resvg bindings, which need Node.
-  prerenderEnvironment: "node",
-  assets: { notFoundHandling: "404-page" },
-  // Only these inputs affect the build; unchanged sources skip the rebuild.
-  memo: {
-    include: [
-      "src/**",
-      "public/**",
-      "package.json",
-      "pnpm-lock.yaml",
-      "astro.config.ts",
-      "tsconfig.json",
-    ],
-  },
-});
-
 export default Alchemy.Stack(
   "LeoTrapani",
   {
@@ -39,10 +21,31 @@ export default Alchemy.Stack(
     state: Cloudflare.state(),
   },
   Effect.gen(function* () {
-    const site = yield* Website;
     const stage = yield* Alchemy.Stage;
+    // Only production serves the real domain; PR previews stay on workers.dev.
+    const site = yield* Cloudflare.Website.Astro("Website", {
+      astro: { output: "static" },
+      // OG images are rendered with native resvg bindings, which need Node.
+      prerenderEnvironment: "node",
+      assets: { notFoundHandling: "404-page" },
+      // Only these inputs affect the build; unchanged sources skip the rebuild.
+      memo: {
+        include: [
+          "src/**",
+          "public/**",
+          "package.json",
+          "pnpm-lock.yaml",
+          "astro.config.ts",
+          "tsconfig.json",
+        ],
+      },
+      // www 301s to the apex at the edge, before the Worker runs.
+      domain:
+        stage === "prod"
+          ? { name: DOMAIN, redirects: [`www.${DOMAIN}`] }
+          : undefined,
+    });
 
-    // Only production owns the real zone; PR previews stay on workers.dev.
     if (stage === "prod") {
       const zone = yield* Cloudflare.Zone.Zone("Zone", { name: DOMAIN });
 
