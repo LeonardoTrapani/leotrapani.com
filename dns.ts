@@ -12,6 +12,14 @@ type DnsRecord = {
 );
 
 export const DNS_RECORDS: Record<string, DnsRecord> = {
+  // Temporary: keeps the apex on the old Vercel site while the nameservers
+  // move. Replaced by the Worker custom domain once the zone is active.
+  VercelApex: {
+    type: "CNAME",
+    name: "@",
+    content: "dfef3ad1819bdede.vercel-dns-016.com",
+    comment: "Temporary bridge to Vercel during the nameserver switch",
+  },
   // Google Workspace: mail for ciao@leotrapani.com and domain verification.
   GoogleMx: {
     type: "MX",
