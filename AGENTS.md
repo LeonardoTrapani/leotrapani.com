@@ -30,7 +30,7 @@ src/
 ## Common tasks
 
 - **Edit bio or sections**: `src/pages/index.astro`; structured data lives in `src/data/`.
-- **Add a post**: new `.md` file in `src/content/blog/` with `title`, `description`, `createdAt` (`YYYY-MM-DD`), optional `updatedAt`, `pinned`, `draft`. Posts are served at `/blog/<file-name>`. Drafts show up in `pnpm dev` only; production builds skip them.
+- **Add a post**: new `.md` file in `src/content/blog/` with `title`, `description`, `createdAt` (`YYYY-MM-DD`), optional `summary` (short line for the home Writing column and the OG card), `updatedAt`, `pinned`, `draft`. Posts are served at `/blog/<file-name>`. Drafts show up in `pnpm dev` only; production builds skip them.
 - **Retire a URL**: add a line to `public/_redirects`.
 
 ## Commands
@@ -49,5 +49,5 @@ Run `pnpm check`, `pnpm build` and `pnpm format:check` before committing.
 
 - Type-safe TypeScript; descriptive names over comments. Comment only the non-obvious "why".
 - No emojis in code, comments or commit messages.
-- Keep the design restrained: reuse the tokens in `global.css` (`--foreground`, `--muted`, `--faint`, `--border`) instead of new colors, and prefer whitespace over borders to separate sections.
+- Keep the design restrained: reuse the tokens in `global.css` (`--foreground`, `--strong`, `--muted`, `--border`) instead of new colors, and prefer whitespace over borders to separate sections.
 - Ship zero client JavaScript unless a feature truly needs it.
