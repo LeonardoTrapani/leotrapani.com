@@ -34,9 +34,11 @@ Add a Markdown file to `src/content/blog/`. The file name becomes the URL (`/blo
 ```md
 ---
 title: "Post title"
-description: "One-sentence summary used in lists, RSS and previews."
+description: "Subtitle under the title, also used for RSS and link previews."
+summary: "Short line for the home page and the OG image." # optional
 createdAt: "2026-10-25"
-draft: false
+pinned: false # show on the home page
+draft: false # drafts only appear in `pnpm dev`
 ---
 ```
 
