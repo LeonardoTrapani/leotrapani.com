@@ -2,9 +2,16 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Not found" noIndex>
-  <h1 class="label">Not found</h1>
+<BaseLayout title="Not found" noIndex back={{ label: "Index", href: "/" }}>
+  <h1>Not found</h1>
   <p>
     This page doesn't exist. <a href="/">Go home</a>.
   </p>
 </BaseLayout>
+
+<style>
+  h1 {
+    color: var(--strong);
+    margin-bottom: var(--space);
+  }
+</style>
