@@ -1,0 +1,48 @@
+---
+import type { Link } from "@/data/site";
+
+type Props = Link;
+
+const { label, href } = Astro.props;
+---
+
+<nav aria-label="Back">
+  <a href={href}>
+    <span aria-hidden="true">↖</span>
+    <em>{label}</em>
+  </a>
+</nav>
+
+<style>
+  nav {
+    margin-bottom: 3rem;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    color: var(--foreground);
+    text-decoration: none;
+    transition: color 150ms ease;
+  }
+
+  a:hover {
+    color: var(--strong);
+  }
+
+  span {
+    color: var(--muted);
+  }
+
+  /* With enough room, sit in the left margin beside the column, aligned with the title. */
+  @media (min-width: 72rem) {
+    nav {
+      position: absolute;
+      top: 0;
+      right: 100%;
+      margin: 0 6rem 0 0;
+      white-space: nowrap;
+    }
+  }
+</style>

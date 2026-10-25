@@ -14,8 +14,6 @@ export type Link = {
   href: string;
 };
 
-export const NAV: Link[] = [{ label: "Writing", href: "/blog" }];
-
 export const SOCIAL_LINKS: Link[] = [
   { label: "X", href: "https://x.com/leo_trapani" },
   { label: "GitHub", href: "https://github.com/leonardotrapani" },

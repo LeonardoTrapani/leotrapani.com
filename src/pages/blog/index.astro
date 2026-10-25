@@ -9,7 +9,15 @@ const posts = await getPosts();
 <BaseLayout
   title="Writing"
   description="Writing on engineering, startups, and the tools I build."
+  back={{ label: "Index", href: "/" }}
 >
-  <h1 class="label">Writing</h1>
+  <h1>Writing</h1>
   <PostList posts={posts} />
 </BaseLayout>
+
+<style>
+  h1 {
+    color: var(--strong);
+    margin-bottom: 3rem;
+  }
+</style>

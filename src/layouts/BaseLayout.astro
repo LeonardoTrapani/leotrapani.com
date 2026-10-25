@@ -3,9 +3,10 @@ import "@fontsource-variable/inter";
 import "@fontsource/newsreader/400-italic.css";
 import "@/styles/global.css";
 
+import BackLink from "@/components/BackLink.astro";
 import SiteFooter from "@/components/SiteFooter.astro";
 import SiteHeader from "@/components/SiteHeader.astro";
-import { SITE } from "@/data/site";
+import { SITE, type Link } from "@/data/site";
 import { pagePath } from "@/lib/url";
 
 type Props = {
@@ -15,6 +16,8 @@ type Props = {
   type?: "website" | "article";
   publishedAt?: Date;
   noIndex?: boolean;
+  /** Inner pages show a back link in the margin instead of the site header. */
+  back?: Link;
 };
 
 const {
@@ -24,6 +27,7 @@ const {
   type = "website",
   publishedAt,
   noIndex = false,
+  back,
 } = Astro.props;
 
 const pageTitle = title ? `${title} – ${SITE.name}` : SITE.title;
@@ -82,8 +86,9 @@ const ogImageUrl = new URL(ogImage, Astro.site);
   </head>
   <body>
     <div class="page">
-      <SiteHeader />
-      <main>
+      {back ? null : <SiteHeader />}
+      <main class:list={{ inner: back }}>
+        {back && <BackLink {...back} />}
         <slot />
       </main>
       <SiteFooter />
@@ -102,6 +107,11 @@ const ogImageUrl = new URL(ogImage, Astro.site);
     margin-top: 3.5rem;
   }
 
+  main.inner {
+    position: relative;
+    margin-top: 0;
+  }
+
   @media (max-width: 640px) {
     .page {
       padding-top: 3rem;
@@ -109,6 +119,10 @@ const ogImageUrl = new URL(ogImage, Astro.site);
 
     main {
       margin-top: 3rem;
+    }
+
+    main.inner {
+      margin-top: 0;
     }
   }
 </style>
