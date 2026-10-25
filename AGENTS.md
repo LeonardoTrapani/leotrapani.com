@@ -1,6 +1,6 @@
 # AI Agent Guidelines for leotrapani.com
 
-Personal site and blog of Leonardo Trapani (@leo_trapani). The design goal is calm and minimal: one narrow column, text first, generous whitespace, no cards, icons or badges. References: paco.me, benji.org, haydenbleasel.com.
+Personal site and blog of Leonardo Trapani (@leo_trapani). The design goal is calm and minimal: one narrow column, text first, generous whitespace, no cards, icons or badges.
 
 ## Stack
 
