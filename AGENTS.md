@@ -13,7 +13,9 @@ Personal site and blog of Leonardo Trapani (@leo_trapani). The design goal is ca
 ## Project structure
 
 ```
-alchemy.run.ts          Cloudflare stack (Effect program)
+alchemy.run.ts          Cloudflare stack (Effect program); posts the PR preview comment in CI
+stacks/github.ts        One-off stack that mints the CI Cloudflare token into GitHub secrets
+.github/workflows/ci.yml Checks, PR previews (pr-N stages), prod deploy from main, preview cleanup
 astro.config.ts         Astro config (site URL, sitemap, Shiki themes)
 public/                 Static files; _redirects holds legacy URL redirects
 src/
