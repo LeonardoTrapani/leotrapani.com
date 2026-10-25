@@ -11,9 +11,4 @@ export const PROJECTS: Entry[] = [
     href: "https://xschema.dev",
     description: "JSON Schema to native validators, across languages.",
   },
-  {
-    name: "Rediredge",
-    href: "https://rediredge.app",
-    description: "Self-hostable redirect infrastructure for domains.",
-  },
 ];
