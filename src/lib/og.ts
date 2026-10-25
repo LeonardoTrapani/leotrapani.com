@@ -9,15 +9,22 @@ import { SITE } from "@/data/site";
 const WIDTH = 1200;
 const HEIGHT = 630;
 
+// Mirrors the light theme tokens in src/styles/global.css.
+const COLORS = {
+  background: "#ffffff",
+  strong: "#111111",
+  muted: "#737373",
+};
+
 const require = createRequire(import.meta.url);
 
-const loadFont = (file: string) =>
-  readFile(require.resolve(`@fontsource/inter/files/${file}`));
+const loadFont = (path: string) => readFile(require.resolve(path));
 
 const fonts = Promise.all([
-  loadFont("inter-latin-400-normal.woff"),
-  loadFont("inter-latin-500-normal.woff"),
-]).then(([regular, medium]) => [
+  loadFont("@fontsource/inter/files/inter-latin-400-normal.woff"),
+  loadFont("@fontsource/inter/files/inter-latin-500-normal.woff"),
+  loadFont("@fontsource/newsreader/files/newsreader-latin-400-italic.woff"),
+]).then(([regular, medium, serifItalic]) => [
   {
     name: "Inter",
     data: regular,
@@ -30,31 +37,57 @@ const fonts = Promise.all([
     weight: 500 as const,
     style: "normal" as const,
   },
+  {
+    name: "Newsreader",
+    data: serifItalic,
+    weight: 400 as const,
+    style: "italic" as const,
+  },
 ]);
 
 type OgImageOptions = {
   title: string;
   subtitle?: string;
+  /** Set the title in the serif italic accent instead of Inter. */
+  accent?: boolean;
 };
 
 /** Renders a 1200x630 PNG Open Graph card in the site's visual style. */
 export async function renderOgImage({
   title,
   subtitle,
+  accent = false,
 }: OgImageOptions): Promise<Uint8Array<ArrayBuffer>> {
+  const titleStyle = accent
+    ? {
+        fontFamily: "Newsreader",
+        fontStyle: "italic",
+        fontSize: 76,
+        lineHeight: "84px",
+      }
+    : {
+        fontFamily: "Inter",
+        fontWeight: 500,
+        fontSize: 60,
+        lineHeight: "72px",
+        letterSpacing: "-0.02em",
+      };
+
   const svg = await satori(
     {
       type: "div",
       props: {
         style: {
-          width: "100%",
-          height: "100%",
+          // Satori defaults to content-box, so padding would grow the canvas.
+          boxSizing: "border-box",
+          width: WIDTH,
+          height: HEIGHT,
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          padding: "80px",
-          backgroundColor: "#fdfdfc",
-          color: "#1c1c1a",
+          padding: "88px 96px",
+          backgroundColor: COLORS.background,
+          color: COLORS.strong,
           fontFamily: "Inter",
         },
         children: [
@@ -68,24 +101,19 @@ export async function renderOgImage({
           {
             type: "div",
             props: {
-              style: { display: "flex", flexDirection: "column", gap: 20 },
+              style: { display: "flex", flexDirection: "column", gap: 24 },
               children: [
                 {
                   type: "div",
                   props: {
-                    style: {
-                      fontSize: 60,
-                      fontWeight: 500,
-                      lineHeight: 1.15,
-                      letterSpacing: "-0.02em",
-                    },
+                    style: { ...titleStyle, maxWidth: 960 },
                     children: title,
                   },
                 },
                 subtitle && {
                   type: "div",
                   props: {
-                    style: { fontSize: 28, color: "#73736e" },
+                    style: { fontSize: 28, color: COLORS.muted },
                     children: subtitle,
                   },
                 },

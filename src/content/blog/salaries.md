@@ -1,5 +1,6 @@
 ---
 title: "Datapizza Salaries Manifesto"
+summary: "Salary transparency for Italian tech."
 description: "Salaries is our platform for mapping the Italian tech market through detailed statistics on salaries, roles, and trends. This is our manifesto: the principles that guide us and how we put them into practice."
 createdAt: "2025-12-09"
 updatedAt: "2025-12-09"

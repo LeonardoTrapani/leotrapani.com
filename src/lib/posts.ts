@@ -9,6 +9,11 @@ export async function getPosts(): Promise<Post[]> {
   );
 }
 
+export async function getPinnedPosts(): Promise<Post[]> {
+  const posts = await getPosts();
+  return posts.filter((post) => post.data.pinned);
+}
+
 /** Static paths shared by every per-post route (article page, OG image). */
 export async function getPostPaths() {
   const posts = await getPosts();

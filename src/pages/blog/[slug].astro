@@ -43,8 +43,7 @@ const { Content } = await render(post);
   }
 
   h1 {
-    font-size: 1.15rem;
-    line-height: 1.5;
+    color: var(--strong);
     text-wrap: balance;
   }
 
@@ -58,16 +57,17 @@ const { Content } = await render(post);
   }
 
   .back a:hover {
-    color: var(--foreground);
+    color: var(--strong);
   }
 
   .prose > :global(*) + :global(*) {
-    margin-top: 1.25rem;
+    margin-top: var(--space);
   }
 
   .prose :global(h2),
   .prose :global(h3) {
     margin-top: 2.75rem;
+    color: var(--strong);
     font-weight: 600;
   }
 
@@ -97,10 +97,11 @@ const { Content } = await render(post);
   }
 
   .prose :global(li::marker) {
-    color: var(--faint);
+    color: var(--muted);
   }
 
   .prose :global(strong) {
+    color: var(--strong);
     font-weight: 600;
   }
 

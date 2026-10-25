@@ -1,14 +1,16 @@
 ---
 type Props = {
   title: string;
+  /** Full-size heading for prose sections; small muted label otherwise. */
+  prominent?: boolean;
 };
 
-const { title } = Astro.props;
+const { title, prominent = false } = Astro.props;
 const id = title.toLowerCase().replace(/\s+/g, "-");
 ---
 
 <section aria-labelledby={id}>
-  <h2 id={id} class="label">
+  <h2 id={id} class={prominent ? "heading" : "label"}>
     {title}
   </h2>
   <slot />
@@ -17,5 +19,10 @@ const id = title.toLowerCase().replace(/\s+/g, "-");
 <style>
   section + :global(section) {
     margin-top: 4rem;
+  }
+
+  .heading {
+    color: var(--strong);
+    margin-bottom: var(--space);
   }
 </style>

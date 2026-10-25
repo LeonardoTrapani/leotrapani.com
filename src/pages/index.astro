@@ -1,67 +1,57 @@
 ---
-import PostList from "@/components/PostList.astro";
+import EntryList from "@/components/EntryList.astro";
 import Section from "@/components/Section.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { BUILDING } from "@/data/building";
 import { PROJECTS } from "@/data/projects";
 import { SITE, SOCIAL_LINKS } from "@/data/site";
-import { WORK } from "@/data/work";
-import { getPosts } from "@/lib/posts";
+import { getPinnedPosts, postUrl } from "@/lib/posts";
 
-const posts = await getPosts();
+const pinned = await getPinnedPosts();
+const writing = [
+  ...pinned.map((post) => ({
+    name: post.data.title,
+    href: postUrl(post),
+    description: post.data.summary,
+  })),
+  { name: "All writing", href: "/blog", description: "Everything, by year." },
+];
 ---
 
 <BaseLayout>
   <div class="intro">
     <p>
-      <em>Technical founder and startup engineer.</em> 20 years old, based in
-      Milan.
+      <em>Technical founder and startup engineer.</em> Leading Dual at{" "}
+      <a href="https://datapizza.tech">Datapizza</a>, an agent platform that
+      brings AI into enterprises. I joined as employee #8.
     </p>
     <p>
-      At <a href="https://datapizza.tech">Datapizza</a> (#8), I'm leading Dual,
-      building an agent platform that brings AI into enterprises.
-    </p>
-    <p>
-      Outside of work I ship and contribute to open-source projects, train MMA,
-      and live my university life in Milan.
+      Before that, three years of freelancing: taking products from zero to
+      production for startups and small teams.
     </p>
   </div>
 
-  <Section title="Work">
-    <ul class="entries">
-      {WORK.map((role) => (
-        <li class="entry">
-          <div>
-            {role.href ? (
-              <a href={role.href}>{role.organization}</a>
-            ) : (
-              <span>{role.organization}</span>
-            )}
-            <p class="muted">{role.title}</p>
-          </div>
-          <span class="muted period">
-            {role.start}–{role.end ?? "now"}
-          </span>
-        </li>
-      ))}
-    </ul>
+  <div class="columns">
+    <Section title="Building">
+      <EntryList items={BUILDING} />
+    </Section>
+    <Section title="Projects">
+      <EntryList items={PROJECTS} />
+    </Section>
+    <Section title="Writing">
+      <EntryList items={writing} />
+    </Section>
+  </div>
+
+  <Section title="Now" prominent>
+    <p>
+      Studying Economics, Management and Computer Science at Bocconi, shipping
+      open-source on the side, and training MMA. Twenty years old, living in
+      Milan.
+    </p>
   </Section>
 
-  <Section title="Projects">
-    <ul class="entries">
-      {PROJECTS.map((project) => (
-        <li>
-          <a href={project.href}>{project.name}</a>
-          <p class="muted">{project.description}</p>
-        </li>
-      ))}
-    </ul>
-  </Section>
-
-  <Section title="Writing">
-    <PostList posts={posts} />
-  </Section>
-
-  <Section title="Connect">
+  <Section title="Connect" prominent>
     <p>
       Reach me at <a href={`mailto:${SITE.email}`}>{SITE.email}</a>, or find me
       on{" "}
@@ -84,24 +74,25 @@ const posts = await getPosts();
   .intro {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--space);
     margin-bottom: 4rem;
   }
 
-  .entries {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
   }
 
-  .entry {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+  .columns > :global(section + section) {
+    margin-top: 0;
   }
 
-  .period {
-    flex-shrink: 0;
-    font-variant-numeric: tabular-nums;
+  @media (max-width: 640px) {
+    .columns {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
   }
 </style>
