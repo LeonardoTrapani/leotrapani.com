@@ -1,7 +1,8 @@
 ---
 import { NAV, SITE } from "@/data/site";
+import { pagePath } from "@/lib/url";
 
-const currentPath = Astro.url.pathname;
+const currentPath = pagePath(Astro.url);
 const isActive = (href: string) =>
   currentPath === href || currentPath.startsWith(`${href}/`);
 ---

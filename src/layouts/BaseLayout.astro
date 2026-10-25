@@ -6,6 +6,7 @@ import "@/styles/global.css";
 import SiteFooter from "@/components/SiteFooter.astro";
 import SiteHeader from "@/components/SiteHeader.astro";
 import { SITE } from "@/data/site";
+import { pagePath } from "@/lib/url";
 
 type Props = {
   title?: string;
@@ -13,6 +14,7 @@ type Props = {
   ogImage?: string;
   type?: "website" | "article";
   publishedAt?: Date;
+  noIndex?: boolean;
 };
 
 const {
@@ -21,10 +23,11 @@ const {
   ogImage = "/og/index.png",
   type = "website",
   publishedAt,
+  noIndex = false,
 } = Astro.props;
 
 const pageTitle = title ? `${title} – ${SITE.name}` : SITE.title;
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const canonicalUrl = new URL(pagePath(Astro.url), Astro.site);
 const ogImageUrl = new URL(ogImage, Astro.site);
 ---
 
@@ -35,7 +38,11 @@ const ogImageUrl = new URL(ogImage, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalUrl} />
+    {noIndex ? (
+      <meta name="robots" content="noindex" />
+    ) : (
+      <link rel="canonical" href={canonicalUrl} />
+    )}
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/images/shark-logo-192.png" />
     <link
