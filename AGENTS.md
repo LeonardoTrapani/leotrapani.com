@@ -54,4 +54,4 @@ Run `pnpm check`, `pnpm build` and `pnpm format:check` before committing.
 - Type-safe TypeScript; descriptive names over comments. Comment only the non-obvious "why".
 - No emojis in code, comments or commit messages.
 - Keep the design restrained: reuse the tokens in `global.css` (`--foreground`, `--strong`, `--muted`, `--border`) instead of new colors, and prefer whitespace over borders to separate sections.
-- Ship zero client JavaScript unless a feature truly needs it.
+- Ship zero client JavaScript unless a feature truly needs it. The only script today is the Cloudflare Web Analytics beacon in `BaseLayout`, production builds only.
