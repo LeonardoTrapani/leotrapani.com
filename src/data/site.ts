@@ -1,8 +1,8 @@
 export const SITE = {
   name: "Leonardo Trapani",
-  title: "Leonardo Trapani – 20, building startups in Italy",
+  title: "Leonardo Trapani – Building startups in Italy",
   description:
-    "20, building startups in Italy. Founding engineer at Datapizza, based in Milan.",
+    "Building startups in Italy. 20 y/o founding engineer at Datapizza, based in Milan.",
   url: "https://leotrapani.com",
   email: "ciao@leotrapani.com",
   locale: "en",
