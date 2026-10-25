@@ -4,7 +4,7 @@ import { renderOgImage } from "@/lib/og";
 
 export const GET: APIRoute = async () => {
   const png = await renderOgImage({
-    title: "Building startups in Italy.",
+    title: "20, building startups in Italy.",
     subtitle: "leotrapani.com",
     accent: true,
   });

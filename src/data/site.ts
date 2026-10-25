@@ -1,8 +1,8 @@
 export const SITE = {
   name: "Leonardo Trapani",
-  title: "Leonardo Trapani – Building startups in Italy",
+  title: "Leonardo Trapani – 20, building startups in Italy",
   description:
-    "Founding engineer at Datapizza, building startups in Italy. Twenty years old, living in Milan.",
+    "20, building startups in Italy. Founding engineer at Datapizza, based in Milan.",
   url: "https://leotrapani.com",
   email: "ciao@leotrapani.com",
   locale: "en",
@@ -20,5 +20,4 @@ export const SOCIAL_LINKS: Link[] = [
   { label: "X", href: "https://x.com/leo_trapani" },
   { label: "GitHub", href: "https://github.com/leonardotrapani" },
   { label: "LinkedIn", href: "https://linkedin.com/in/leonardotrapani" },
-  { label: "YouTube", href: "https://www.youtube.com/@leotrapani" },
 ];
