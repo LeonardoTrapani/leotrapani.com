@@ -1,0 +1,107 @@
+---
+import "@fontsource-variable/inter";
+import "@fontsource/newsreader/400-italic.css";
+import "@/styles/global.css";
+
+import SiteFooter from "@/components/SiteFooter.astro";
+import SiteHeader from "@/components/SiteHeader.astro";
+import { SITE } from "@/data/site";
+
+type Props = {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  type?: "website" | "article";
+  publishedAt?: Date;
+};
+
+const {
+  title,
+  description = SITE.description,
+  ogImage = "/og/index.png",
+  type = "website",
+  publishedAt,
+} = Astro.props;
+
+const pageTitle = title ? `${title} – ${SITE.name}` : SITE.title;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const ogImageUrl = new URL(ogImage, Astro.site);
+---
+
+<!doctype html>
+<html lang={SITE.locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/images/shark-logo-192.png" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${SITE.name} – Blog`}
+      href="/rss.xml"
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta
+      name="theme-color"
+      content="#fdfdfc"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#111110"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={title ?? SITE.title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    {publishedAt && (
+      <meta
+        property="article:published_time"
+        content={publishedAt.toISOString()}
+      />
+    )}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content={SITE.twitterHandle} />
+  </head>
+  <body>
+    <div class="page">
+      <SiteHeader />
+      <main>
+        <slot />
+      </main>
+      <SiteFooter />
+    </div>
+  </body>
+</html>
+
+<style>
+  .page {
+    max-width: calc(var(--measure) + 3rem);
+    margin: 0 auto;
+    padding: 6rem 1.5rem 4rem;
+  }
+
+  main {
+    margin-top: 4rem;
+  }
+
+  @media (max-width: 640px) {
+    .page {
+      padding-top: 3rem;
+    }
+
+    main {
+      margin-top: 3rem;
+    }
+  }
+</style>

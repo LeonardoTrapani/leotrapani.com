@@ -1,0 +1,21 @@
+---
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+const id = title.toLowerCase().replace(/\s+/g, "-");
+---
+
+<section aria-labelledby={id}>
+  <h2 id={id} class="label">
+    {title}
+  </h2>
+  <slot />
+</section>
+
+<style>
+  section + :global(section) {
+    margin-top: 4rem;
+  }
+</style>

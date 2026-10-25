@@ -1,0 +1,64 @@
+---
+import { formatShortDate, postUrl, type Post } from "@/lib/posts";
+
+type Props = {
+  posts: Post[];
+};
+
+const { posts } = Astro.props;
+---
+
+<ol>
+  {posts.map((post, index) => {
+    const year = post.data.createdAt.getUTCFullYear();
+    const isFirstOfYear =
+      index === 0 || posts[index - 1]!.data.createdAt.getUTCFullYear() !== year;
+
+    return (
+      <li>
+        <span class="year" aria-hidden={!isFirstOfYear}>
+          {isFirstOfYear ? year : ""}
+        </span>
+        <a href={postUrl(post)}>{post.data.title}</a>
+        <time datetime={post.data.createdAt.toISOString()}>
+          {formatShortDate(post.data.createdAt)}
+        </time>
+      </li>
+    );
+  })}
+</ol>
+
+<style>
+  li {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr auto;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 0.4rem 0;
+  }
+
+  .year,
+  time {
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--faint);
+  }
+
+  @media (max-width: 480px) {
+    li {
+      grid-template-columns: 1fr auto;
+    }
+
+    .year {
+      display: none;
+    }
+  }
+</style>

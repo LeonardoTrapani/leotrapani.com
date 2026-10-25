@@ -1,65 +1,54 @@
 # [leotrapani.com](https://leotrapani.com)
 
-A minimal, pixel-perfect dev portfolio, component registry, and blog to showcase my work.
+Personal site and blog of Leonardo Trapani. Plain text, one column, nothing in the way.
 
-Check out the live site: [leotrapani.com](https://leotrapani.com)
+## Stack
 
-## Overview
+- [Astro](https://astro.build), fully static output
+- [Alchemy](https://alchemy.run) + [Effect](https://effect.website) to deploy to Cloudflare Workers static assets
+- Plain CSS with system light/dark mode, Inter and Newsreader via Fontsource
 
-### Stack
+## What's inside
 
-- Next.js 16
-- Tailwind CSS v4
-- shadcn/ui
-
-### Featured
-
-- Clean & modern design
-- Light/Dark themes
-- vCard integration
-- SEO optimized ([JSON-LD schema](https://json-ld.org), sitemap, robots)
-- AI-ready with [/llms.txt](https://llmstxt.org)
-- Spam-protected email
-- Installable as PWA
-
-### Blog
-
-- Supports MDX & Markdown
-- Raw `.mdx` endpoints for AI readability
-- Syntax highlighting for clear code presentation
-- Dynamic OG images for rich link previews
-- RSS feed for easy content distribution
-
-### Registry
-
-Easily build and distribute reusable components, hooks, and pages using a custom registry powered by the [shadcn CLI](https://ui.shadcn.com/docs/cli).
-
-Each entry is well-documented and includes:
-
-- Live preview & code snippets
-- Beautiful, readable code blocks
-- One-click command blocks (pnpm, npm, yarn, bun)
+- Home with bio, work, projects, writing and contact links
+- Blog from Markdown files in `src/content/blog`, with Shiki code highlighting
+- RSS feed at `/rss.xml`, sitemap, and [`/llms.txt`](https://llmstxt.org)
+- Open Graph images rendered at build time with Satori
 
 ## Development
 
-Please refer to the [Development Guide](./DEVELOPMENT.md) for more details.
+Requires Node.js 24.11.1+ and pnpm.
+
+```bash
+pnpm install
+pnpm dev          # http://localhost:1408
+pnpm check        # type-check Astro and TypeScript files
+pnpm build        # static build into dist/
+pnpm format:write # format with Prettier
+```
+
+### Writing a post
+
+Add a Markdown file to `src/content/blog/`. The file name becomes the URL (`/blog/<file-name>`).
+
+```md
+---
+title: "Post title"
+description: "One-sentence summary used in lists, RSS and previews."
+createdAt: "2026-10-25"
+draft: false
+---
+```
+
+### Deploying
+
+The Cloudflare stack lives in `alchemy.run.ts`.
+
+```bash
+pnpm alchemy profile edit --add Cloudflare # once, to connect your account
+pnpm deploy
+```
 
 ## License
 
-Licensed under the [MIT license](./LICENSE).
-
-You're free to use my code! Just make sure to <ins>remove all my personal information</ins> before publishing your website. It's awesome to see my code being useful to someone!
-
-## Acknowledgments
-
-- [React](https://react.dev)
-- [Next.js](https://nextjs.org)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Radix UI](https://www.radix-ui.com)
-- [Motion](https://motion.dev)
-- [shadcn/ui](https://ui.shadcn.com)
-- [Aceternity UI](https://ui.aceternity.com)
-- [Kibo UI](https://www.kibo-ui.com)
-- [Lucide](https://lucide.dev)
-- [Fumadocs](https://fumadocs.dev)
-- And many other open-source libraries used in `package.json`
+Licensed under the [MIT license](./LICENSE). You're free to reuse the code; please remove all personal information before publishing your own site.
