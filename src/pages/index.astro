@@ -35,14 +35,13 @@ const writing = [
     <Section title="Building">
       <EntryList items={BUILDING} />
     </Section>
+    <Section title="Projects">
+      <EntryList items={PROJECTS} />
+    </Section>
     <Section title="Writing">
       <EntryList items={writing} />
     </Section>
   </div>
-
-  <Section title="Projects" prominent>
-    <EntryList items={PROJECTS} inline />
-  </Section>
 
   <Section title="Now" prominent>
     <p>
@@ -80,7 +79,7 @@ const writing = [
 
   .columns {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
     margin-bottom: 4rem;
   }
