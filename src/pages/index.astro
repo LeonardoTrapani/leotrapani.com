@@ -5,8 +5,9 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { BUILDING } from "@/data/building";
 import { PROJECTS } from "@/data/projects";
 import { SITE, SOCIAL_LINKS } from "@/data/site";
-import { getPinnedPosts, getPost, postUrl } from "@/lib/posts";
+import { getPinnedPosts, getPost, getPosts, postUrl } from "@/lib/posts";
 
+const hasPosts = (await getPosts()).length > 0;
 const pinned = await getPinnedPosts();
 // Linked only once the post is published, so production never points at a draft.
 const dropoutPost = await getPost("dropout");
@@ -50,7 +51,11 @@ const writing = [
       <EntryList items={PROJECTS} />
     </Section>
     <Section title="Writing">
-      <EntryList items={writing} />
+      {hasPosts ? (
+        <EntryList items={writing} />
+      ) : (
+        <p class="muted">Coming soon.</p>
+      )}
     </Section>
   </div>
 
