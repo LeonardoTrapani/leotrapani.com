@@ -40,6 +40,14 @@ export const DNS_RECORDS: Record<string, DnsRecord> = {
     content: "gv-qfrknog74mjcrd.dv.googlehosted.com",
     comment: "Google Workspace",
   },
+  // Selector "google", 2048-bit key generated in the Admin console.
+  GoogleDkim: {
+    type: "TXT",
+    name: "google._domainkey",
+    content:
+      "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAh7ESEmLHMibTVNyomST8jtLzlId4B8oaHQ5IhtR+AeVZr8Nxz0arp6DPiILA92orwUprwC1EmYbH2TJ8kX1VLTncTWWkdrOK7Jk/a/Of6SiKWepZUWMP2xfH5pPajhRHAUTF22FOavy2GpLmZzT+Egrz47+Vc1lvqK2gJ4hwDAK3IvJP+fE6/jB8lbgtrFCDAygkk/kQhC8+QWYHJBSrFDuCwpWGujebN0YlrqSsXKoElRMytfhW83Jf3+h1oTz5yRXV4DT+2APjF9pDOAdNoknbsmWji0UzsMUwOcPKsZ2jKsvUA+HBaEZa9YeEQ7fn7nXQJnL7SPRnFjGQjznw/wIDAQAB",
+    comment: "Google Workspace DKIM",
+  },
   Dmarc: {
     type: "TXT",
     name: "_dmarc",
