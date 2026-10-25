@@ -46,6 +46,7 @@ const fonts = Promise.all([
 ]);
 
 type OgImageOptions = {
+  eyebrow?: string;
   title: string;
   subtitle?: string;
   accent?: boolean;
@@ -53,6 +54,7 @@ type OgImageOptions = {
 
 /** Renders a 1200x630 PNG Open Graph card in the site's visual style. */
 export async function renderOgImage({
+  eyebrow = SITE.name,
   title,
   subtitle,
   accent = false,
@@ -94,7 +96,7 @@ export async function renderOgImage({
             type: "div",
             props: {
               style: { fontSize: 28, fontWeight: 500 },
-              children: SITE.name,
+              children: eyebrow,
             },
           },
           {

@@ -11,9 +11,5 @@ const posts = await getPosts();
   description="Writing on engineering, startups, and the tools I build."
 >
   <h1 class="label">Writing</h1>
-  {posts.length > 0 ? (
-    <PostList posts={posts} />
-  ) : (
-    <p class="muted">Coming soon.</p>
-  )}
+  <PostList posts={posts} />
 </BaseLayout>

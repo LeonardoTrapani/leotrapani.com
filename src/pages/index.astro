@@ -5,12 +5,11 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { BUILDING } from "@/data/building";
 import { PROJECTS } from "@/data/projects";
 import { SITE, SOCIAL_LINKS } from "@/data/site";
-import { getPinnedPosts, getPost, getPosts, postUrl } from "@/lib/posts";
+import { getPinnedPosts, getPost, postUrl } from "@/lib/posts";
 
-const hasPosts = (await getPosts()).length > 0;
 const pinned = await getPinnedPosts();
 // Linked only once the post is published, so production never points at a draft.
-const dropoutPost = await getPost("dropout");
+const dropoutPost = await getPost("dropped-out");
 const TALK_URL = "https://www.youtube.com/watch?v=mQWsm7AVbCM";
 const writing = [
   ...pinned.map((post) => ({
@@ -51,11 +50,7 @@ const writing = [
       <EntryList items={PROJECTS} />
     </Section>
     <Section title="Writing">
-      {hasPosts ? (
-        <EntryList items={writing} />
-      ) : (
-        <p class="muted">Coming soon.</p>
-      )}
+      <EntryList items={writing} />
     </Section>
   </div>
 
@@ -68,9 +63,9 @@ const writing = [
         ) : (
           "dropped out"
         )}{" "}
-        of Bocconi. Most of my days go into Dual, where I'm technical lead and
-        own the technical strategy: a platform for agents and automations that
-        are reliable, observable and actually deployable inside a company.
+        of Bocconi. Most of my days go into Dual, a platform for agents and
+        automations that are reliable, observable and actually deployable inside
+        a company.
       </p>
       <p>On the side I ship open-source and train MMA. Based in Milan.</p>
     </div>
