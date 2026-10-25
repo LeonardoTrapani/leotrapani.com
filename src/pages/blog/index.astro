@@ -1,0 +1,15 @@
+---
+import PostList from "@/components/PostList.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getPosts } from "@/lib/posts";
+
+const posts = await getPosts();
+---
+
+<BaseLayout
+  title="Blog"
+  description="Writing on engineering, startups, and the tools I build."
+>
+  <h1 class="label">Blog</h1>
+  <PostList posts={posts} />
+</BaseLayout>
