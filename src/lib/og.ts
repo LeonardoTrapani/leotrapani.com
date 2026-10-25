@@ -12,7 +12,7 @@ const HEIGHT = 630;
 // Mirrors the light theme tokens in src/styles/global.css.
 const COLORS = {
   background: "#ffffff",
-  strong: "#111111",
+  strong: "#1a1a1a",
   muted: "#737373",
 };
 
@@ -48,7 +48,6 @@ const fonts = Promise.all([
 type OgImageOptions = {
   title: string;
   subtitle?: string;
-  /** Set the title in the serif italic accent instead of Inter. */
   accent?: boolean;
 };
 
