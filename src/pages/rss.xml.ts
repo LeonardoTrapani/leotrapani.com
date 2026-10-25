@@ -18,5 +18,6 @@ export const GET: APIRoute = async (context) => {
       link: postUrl(post),
     })),
     customData: `<language>${SITE.locale}</language>`,
+    trailingSlash: false,
   });
 };
