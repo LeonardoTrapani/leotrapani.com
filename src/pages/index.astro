@@ -21,9 +21,10 @@ const writing = [
 <BaseLayout>
   <div class="intro">
     <p>
-      <em>Technical founder and startup engineer.</em> Leading Dual at{" "}
-      <a href="https://datapizza.tech">Datapizza</a>, an agent platform that
-      brings AI into enterprises. I joined as employee #8.
+      <em>Building startups in Italy.</em> Founding engineer at{" "}
+      <a href="https://datapizza.tech">Datapizza</a>, where I lead Dual, our
+      agent platform, on the technical side. We bring AI into Italian companies,
+      and in July we raised a €10M Series A to do it at scale.
     </p>
     <p>
       From 2022 to 2025 I also freelanced, taking products from zero to
@@ -44,11 +45,18 @@ const writing = [
   </div>
 
   <Section title="Now" prominent>
-    <p>
-      Studying Economics, Management and Computer Science at Bocconi, shipping
-      open-source on the side, and training MMA. Twenty years old, living in
-      Milan.
-    </p>
+    <div class="now">
+      <p>
+        I dropped out of Bocconi to work on this full time. Most of my days go
+        into Dual: making agents reliable enough that real companies run them in
+        production, not just in a demo.
+      </p>
+      <p>
+        The long-term plan is to build startups here in Italy, and Datapizza is
+        where I'm learning how. On the side I ship open-source and train MMA.
+        Twenty years old, living in Milan.
+      </p>
+    </div>
   </Section>
 
   <Section title="Connect" prominent>
@@ -70,10 +78,14 @@ const writing = [
 </BaseLayout>
 
 <style>
-  .intro {
+  .intro,
+  .now {
     display: flex;
     flex-direction: column;
     gap: var(--space);
+  }
+
+  .intro {
     margin-bottom: 4rem;
   }
 
