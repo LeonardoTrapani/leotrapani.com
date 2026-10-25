@@ -9,6 +9,12 @@ export async function getPosts(): Promise<Post[]> {
   );
 }
 
+/** Static paths shared by every per-post route (article page, OG image). */
+export async function getPostPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
 export function postUrl(post: Post): string {
   return `/blog/${post.id}`;
 }

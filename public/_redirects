@@ -1,2 +1,15 @@
 /rss /rss.xml 301
 /blog/shimmering-text /blog 301
+/blog.mdx/:slug /blog/:slug 301
+/components / 301
+/components/* / 301
+/vcard / 301
+/about.md /llms.txt 301
+/awards.md /llms.txt 301
+/certifications.md /llms.txt 301
+/experience.md /llms.txt 301
+/projects.md /llms.txt 301
+/llms-full.txt /llms.txt 301
+/og /og/index.png 301
+/og/simple /og/index.png 301
+/og/domain /og/index.png 301

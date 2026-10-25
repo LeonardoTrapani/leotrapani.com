@@ -1,12 +1,9 @@
-import type { APIRoute, GetStaticPaths } from "astro";
+import type { APIRoute } from "astro";
 
 import { renderOgImage } from "@/lib/og";
-import { formatLongDate, getPosts, type Post } from "@/lib/posts";
+import { formatLongDate, getPostPaths, type Post } from "@/lib/posts";
 
-export const getStaticPaths = (async () => {
-  const posts = await getPosts();
-  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
-}) satisfies GetStaticPaths;
+export const getStaticPaths = getPostPaths;
 
 export const GET: APIRoute<{ post: Post }> = async ({ props }) => {
   const png = await renderOgImage({
