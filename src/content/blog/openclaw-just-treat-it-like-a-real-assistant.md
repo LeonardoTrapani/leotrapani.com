@@ -1,5 +1,6 @@
 ---
 title: "OpenClaw: just treat it like a real assistant"
+summary: "Give your agent agency, not your identity."
 description: "Perimeter security is the easy part. A practical framework to run OpenClaw with real agency without handing it your identity."
 category: "security"
 pinned: true

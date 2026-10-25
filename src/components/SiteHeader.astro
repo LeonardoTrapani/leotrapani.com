@@ -40,6 +40,7 @@ const isActive = (href: string) =>
   }
 
   .name {
+    color: var(--strong);
     font-weight: 500;
   }
 
@@ -50,11 +51,12 @@ const isActive = (href: string) =>
 
   nav a {
     color: var(--muted);
+    font-size: var(--text-sm);
     transition: color 150ms ease;
   }
 
   nav a:hover,
   nav a[aria-current="page"] {
-    color: var(--foreground);
+    color: var(--strong);
   }
 </style>

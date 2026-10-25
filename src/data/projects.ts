@@ -1,10 +1,6 @@
-export type Project = {
-  name: string;
-  href: string;
-  description: string;
-};
+import type { Entry } from "./entry";
 
-export const PROJECTS: Project[] = [
+export const PROJECTS: Entry[] = [
   {
     name: "XSchema",
     href: "https://xschema.dev",

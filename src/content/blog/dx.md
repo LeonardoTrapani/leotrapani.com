@@ -1,9 +1,10 @@
 ---
 title: "DX: I'm obsessed with developer experience (and you should be too)"
+summary: "Why developer experience compounds."
 description: "DX is not fluff: it's the compounding force behind happier teams and faster products. Stories, tools, and a DX‑first ethos."
 createdAt: "2025-10-15"
 updatedAt: "2025-10-15"
-pinned: false
+pinned: true
 ---
 
 > DX isn't cosmetics. DX compounds.
