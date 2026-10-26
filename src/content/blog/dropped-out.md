@@ -12,86 +12,80 @@ Does university still make sense in the AI era?
 
 One thing first: I don't think Bocconi, or university in general, is useless. It can be a deeply formative path, and for many people it is the right one.
 
-So why did I leave?
+## Why study at all?
 
-Because I care about studying. It sounds like a contradiction, and this post is my attempt to explain why it isn't.
+AI keeps getting smarter. It is becoming an oracle you can ask anything, and it often knows the answer better than any of us. So why study?
 
-## Having an answer is not understanding
+My answer is the opposite of what the question suggests: studying is, if anything, the most important thing we have left.
 
-A few days ago Salvatore Sanfilippo, the creator of Redis, posted a short video called [_Ha ancora senso studiare?_](https://www.youtube.com/watch?v=t5ihk_bNRSk) ("Does studying still make sense?"). Someone had asked him: if AI keeps getting more powerful, an oracle you can ask anything, why study at all?
+And that is exactly why I left university.
 
-His answer is a flat yes. Three of his arguments stuck with me (my translations):
+It sounds like a contradiction, so let me start from why studying still matters.
 
-- **Understanding is a pleasure in itself.** "Intellectual delight is one of the greatest human pleasures: understanding things." Most human knowledge was never acquired because work required it. ([3:25](https://www.youtube.com/watch?v=t5ihk_bNRSk&t=205s))
-- **Knowledge changes how you use the oracle.** With culture, "you know what to ask, and you know much better how to interpret the answers", because "the question matters as much as the answer". And then the next question, and the one after that. ([4:27](https://www.youtube.com/watch?v=t5ihk_bNRSk&t=267s))
-- **AI widens what you can know.** "The angle of the knowable has widened": he now studies things outside his field that he never had access to before. ([5:57](https://www.youtube.com/watch?v=t5ihk_bNRSk&t=357s))
+## The practical reason: knowledge changes how you use the oracle
 
-And one line that hit closer to home: most of the time a young person spends studying gets burned on "wasted time, inefficiencies of the school system". ([5:45](https://www.youtube.com/watch?v=t5ihk_bNRSk&t=345s))
+Getting an answer and understanding something are two different experiences. You can get a correct output and still be unable to reason about it, connect it to something else, or notice what's missing.
 
-I agree with all of it. Here is how I see it.
+The more you know, the better you know what to ask, the better you read the answer, and the better the question that comes after it. AI amplifies what you understand. Whatever it knows, real knowledge still takes you to a higher level of using it.
 
-Getting an answer and understanding something are two different experiences. You can get a correct output and still be unable to reason about it, connect it to something else, or notice what's missing. AI gives you both things at once: the best shortcut ever built for not learning, and the best tool ever built for going deep. Which one you get depends on how you use it.
+That's the usual argument, and it's true. But it's not the one I care about most.
 
-So AI doesn't make studying less important. It raises the stakes. Producing the output is the easy part now. Learning is what builds the person who decides what to do, what to want, and which problems are worth solving.
+## The real reason: the delight of understanding
 
-The question I asked myself was never "should I keep studying?". Of course I should. It was: **where, today, can I study the way I want to?**
+Understanding things is one of the greatest human pleasures.
+
+Most of what humans have ever learned was not learned because work required it. People studied because figuring out how something works is a joy in itself. Learning regardless of the purpose is a delight we have the chance to enjoy, and today we can enjoy it better than ever.
+
+For the first time, something close to the best expert on any topic is literally at hand. You can ask it anything, as many times as you want, at your pace, and go as deep as you like. The limit is no longer access. It's your time and your attention.
+
+So if learning is what matters, the question becomes: where can I learn the way I want to?
 
 For me, the honest answer was no longer university.
 
-## Why I left
+## Misaligned incentives
 
-It's a controversial topic, so here are all my reasons.
+The real value of university is not the exams. It's the forma mentis: the way of thinking you build through hours of study, until you understand a subject deeply.
 
-### 1. The AI revolution
+But the incentives point elsewhere. What university rewards is passing the test, not really learning. You can pass every exam with a good average without understanding the subject, and the shortcut that gets you through the exam often makes it harder to understand it later.
 
-The frontier keeps moving. We're living through such an interesting moment that I want to live it fully, and keeping up takes real time: operational time, thinking time, strategic time.
+To actually get the forma mentis out of university, you have to give it your whole life. Anyone who goes should do exactly that.
 
-Society is going to change deeply: how companies hire, the economy, the way we learn. The fundamentals will last, but time and attention are finite, and splitting them between two demanding paths means doing both worse. The more critically I looked at it, the less staying looked like a good strategic choice.
+Given where I am and the moment we're living in, I chose not to. I had other priorities, and I think they were the right ones.
 
-### 2. The real value of university is the forma mentis, not the exams
+## Why I couldn't give it everything
 
-It's the way of thinking you build through hours of study, until you understand a subject deeply.
+### The AI revolution
 
-While building Datapizza full time, between technology, product, people to manage and business strategy, university inevitably slid into second place. And with little time, the easiest path is what I call _exam engineering_: you pass every exam with a good average without really understanding the subject, and often make it even harder to understand it later.
+The frontier keeps moving. We're living through such an interesting moment that I want to live it fully, and keeping up takes real time: operational time, thinking time, strategic time. Society is going to change deeply: how companies hire, the economy, the way we learn.
 
-I kept passing exams. But I was losing exactly the thing I cared about. You end up with the degree and without the forma mentis: the very part that made it worth going.
+### Datapizza
 
-This is where Sanfilippo's argument points the other way for me. If understanding is the point, a path that keeps me passing exams while I stop understanding isn't protecting my education. It's eating it.
+We just closed a €10M Series A. We're bringing the AI frontier into Italian companies, from Allianz and Generali to companies of every kind and size, and building frontier products where I have a key role in technical and product direction. This round is our real beginning, and now is the time to give it everything.
 
-### 3. AI and the delight of learning
+### The startup ecosystem
 
-I'm curious by nature, and there are many things I want to understand all the way down. Studying is one of the things I enjoy most, and I want to keep doing it for the pleasure of it, not to clear the next exam.
+The Italian market is finally moving. Actually, it's exploding. Together with AI, it's making the startup ecosystem grow exponentially, in Italy and beyond. It's time to put myself on the line: first with Datapizza and the other startups building it, then with whatever comes next.
 
-Today you can have unlimited conversations with something close to the best expert on any topic, and you can learn by doing more than ever. Going deep has never been this accessible. Becoming an expert still takes time, practice, and being wrong often enough to notice it, but most of the friction around it is gone.
+## University had become a parachute
 
-There is a real objection here, and I take it seriously: curiosity alone is no guarantee. Left to yourself, you can jump forever between topics you enjoy. University forces you through hard subjects you would otherwise avoid, and that obligation often sparks a curiosity you didn't know you had.
+So university had become just a plan B, for careers that aren't my goal. I wasn't there to learn anymore.
 
-Leaving means that responsibility is now mine: choosing hard things on purpose, going deep, and checking that I actually understood.
+And learning is what I've always loved. Understanding something has always been one of my favorite feelings. Even during university, most of what I learned, I learned at home: topics I liked and chose to go deep on, and that after many hours I'm slowly becoming an expert in.
 
-### 4. Datapizza
+I had started looking for excuses to stay, just because it was the comfortable option. I wanted to drop every plan B.
 
-Datapizza is one of the reasons, not the reason. I didn't leave university for Datapizza: I left for everything on this list, and Datapizza is part of it.
+## Leaving to learn more
 
-We just closed a €10M Series A. We're bringing the AI frontier into Italian companies, from Allianz and Generali to companies of every kind and size, and we're building frontier products where I have a key role in technical and product direction. This round is our real beginning, and now is the time to give it everything.
+Because learning matters so much to me, leaving was the choice that made the most sense.
 
-### 5. The startup ecosystem
+Full time at Datapizza, I learn far more in practice, and I get to go much deeper into everything I described above, in the middle of a startup ecosystem that is finally taking off.
 
-The Italian market is finally moving. Actually, it's exploding. Together with AI, it's making the startup ecosystem grow exponentially, in Italy and beyond.
+At the same time, I have much more time and focus to study what I care about, and to become a real expert in something, with AI as the best teacher I've ever had.
 
-It's time to put myself on the line: first with Datapizza and the other startups building this ecosystem, then with whatever comes next.
+There are real downsides: the network, research, a safer career, and the obligation to study, which often sparks curiosity you didn't know you had. Without it, the responsibility to pick hard things and go deep is all mine. But every choice has an opportunity cost, and for me, today, the cost of staying is higher than the cost of leaving.
 
-### 6. University had become a parachute
+I didn't leave university to study less. I left to study more, for the pleasure of understanding.
 
-A plan B for careers that aren't my goal. I had started looking for excuses to keep going, just because it was the most comfortable option.
-
-I wanted to drop every plan B and do what I've dreamed of doing since I was a kid. Now that all the cards are on the table, it wouldn't make sense not to jump in.
-
-## What I'm giving up
-
-There are real downsides: the network, research, a safer career, a framework for thinking, and the obligation to study, which often lights up curiosity.
-
-But every choice has an opportunity cost. For me, today, the cost of staying is higher than the cost of leaving.
-
-Sanfilippo is right: studying is still essential. That's exactly why I left. I'm not studying less. I'm studying differently, and more on purpose.
+This post started from a short video by Salvatore Sanfilippo, [_Ha ancora senso studiare?_](https://www.youtube.com/watch?v=t5ihk_bNRSk), which ends with a line I'd sign: studying is still essential.
 
 Everyone I've talked to about this has a different opinion, so I'm curious to hear yours. Write to me at [ciao@leotrapani.com](mailto:ciao@leotrapani.com).
