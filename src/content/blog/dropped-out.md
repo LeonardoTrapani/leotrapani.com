@@ -6,17 +6,15 @@ createdAt: 2026-10-27
 pinned: true
 ---
 
-I left Bocconi.
+I dropped out of Bocconi University.
 
-Does university still make sense in the AI era?
-
-One thing first: I don't think Bocconi, or university in general, is useless. It can be a deeply formative path, and for many people it is the right one.
+Does university still matter in the AI era?
 
 ## Why study at all?
 
 AI keeps getting smarter. It knows more every month, and it is already at the level of the best experts in almost every field. So why study?
 
-Studying is, if anything, the most important thing we have left.
+I think the opposite is true: studying is now the most important thing we have left.
 
 And that is exactly why I left university.
 
