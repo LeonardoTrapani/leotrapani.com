@@ -14,15 +14,13 @@ One thing first: I don't think Bocconi, or university in general, is useless. It
 
 ## Why study at all?
 
-AI keeps getting smarter. It is becoming an oracle you can ask anything, and it often knows the answer better than any of us. So why study?
+AI keeps getting smarter. It knows more every month, and it is already at the level of the best experts in almost every field. So why study?
 
-My answer is the opposite of what the question suggests: studying is, if anything, the most important thing we have left.
+Studying is, if anything, the most important thing we have left.
 
 And that is exactly why I left university.
 
-It sounds like a contradiction, so let me start from why studying still matters.
-
-## The practical reason: knowledge changes how you use the oracle
+## Knowledge changes how you use the oracle
 
 Getting an answer and understanding something are two different experiences. You can get a correct output and still be unable to reason about it, connect it to something else, or notice what's missing.
 
@@ -30,62 +28,66 @@ The more you know, the better you know what to ask, the better you read the answ
 
 That's the usual argument, and it's true. But it's not the one I care about most.
 
-## The real reason: the delight of understanding
+## The delight of understanding
 
-Understanding things is one of the greatest human pleasures.
-
-Most of what humans have ever learned was not learned because work required it. People studied because figuring out how something works is a joy in itself. Learning regardless of the purpose is a delight we have the chance to enjoy, and today we can enjoy it better than ever.
+Most of what humans have ever learned was not learned because work required it. People studied because figuring out how something works is one of the greatest pleasures there is. Learning regardless of the purpose is a delight we have the chance to enjoy, and today we can enjoy it better than ever.
 
 For the first time, something close to the best expert on any topic is literally at hand. You can ask it anything, as many times as you want, at your pace, and go as deep as you like. The limit is no longer access. It's your time and your attention.
 
-So if learning is what matters, the question becomes: where can I learn the way I want to?
+So if learning is what matters, the question becomes: where can I learn best?
 
-For me, the honest answer was no longer university.
+For me, the answer was no longer university.
 
 ## Misaligned incentives
 
 The real value of university is not the exams. It's the forma mentis: the way of thinking you build through hours of study, until you understand a subject deeply.
 
-But the incentives point elsewhere. What university rewards is passing the test, not really learning. You can pass every exam with a good average without understanding the subject, and the shortcut that gets you through the exam often makes it harder to understand it later.
+But the incentives point elsewhere. What university rewards is passing the test, not really learning. I call it _exam engineering_: you learn the shape of the exam instead of the subject, and the shortcut that gets you through often makes the subject harder to understand later.
+
+When I passed General Mathematics with a 29 out of 30 without having really understood it, I started to realize university wasn't the right place for me.
 
 To actually get the forma mentis out of university, you have to give it your whole life. Anyone who goes should do exactly that.
 
-Given where I am and the moment we're living in, I chose not to. I had other priorities, and I think they were the right ones.
-
-## Why I couldn't give it everything
+Given where I was and the moment we're living in, I chose not to:
 
 ### The AI revolution
 
-The frontier keeps moving. We're living through such an interesting moment that I want to live it fully, and keeping up takes real time: operational time, thinking time, strategic time. Society is going to change deeply: how companies hire, the economy, the way we learn.
+Few moments in history have brought a change like this one. I have the chance not only to live it fully, but to live it first-hand, and to make a real contribution to it in the coming years, if I give it everything.
+
+Society is going to change deeply: how companies hire, the economy, the way we learn.
 
 ### Datapizza
 
-We just closed a €10M Series A. We're bringing the AI frontier into Italian companies, from Allianz and Generali to companies of every kind and size, and building frontier products where I have a key role in technical and product direction. This round is our real beginning, and now is the time to give it everything.
+We just closed a €10M Series A. We're bringing the AI frontier into Italian companies, from Allianz and Generali to companies of every kind and size.
+
+I'm a founding engineer, and I lead Dual, our platform for agents and automations that companies can actually deploy. This round is our real beginning, and now is the time to give it everything, to have a real impact on the AI revolution in the country I was born in.
 
 ### The startup ecosystem
 
-The Italian market is finally moving. Actually, it's exploding. Together with AI, it's making the startup ecosystem grow exponentially, in Italy and beyond. It's time to put myself on the line: first with Datapizza and the other startups building it, then with whatever comes next.
+The Italian market is finally moving. Actually, it's exploding, and AI is accelerating it, in Italy and beyond.
+
+It's time to put myself on the line: first with Datapizza, then with whatever comes next.
 
 ## University had become a parachute
 
 So university had become just a plan B, for careers that aren't my goal. I wasn't there to learn anymore.
 
-And learning is what I've always loved. Understanding something has always been one of my favorite feelings. Even during university, most of what I learned, I learned at home: topics I liked and chose to go deep on, and that after many hours I'm slowly becoming an expert in.
+And learning is what I've always loved. As a kid I started programming, taught myself the basics of software and banged my head against it for years. That curiosity, and the chance to build whatever I wanted, got me my first job at 16.
+
+Even during university, most of what I learned, I learned at home: topics I chose to go deep on, and that after many hours I'm slowly becoming an expert in.
 
 I had started looking for excuses to stay, just because it was the comfortable option. I wanted to drop every plan B.
 
 ## Leaving to learn more
 
-Because learning matters so much to me, leaving was the choice that made the most sense.
+Because learning, and living this moment, mattered so much to me, leaving was the choice that made the most sense.
 
-Full time at Datapizza, I learn far more in practice, and I get to go much deeper into everything I described above, in the middle of a startup ecosystem that is finally taking off.
+Now I learn every day by building, and I have much more time and focus to study what I care about and become a real expert in something, with AI as the best teacher I've ever had.
 
-At the same time, I have much more time and focus to study what I care about, and to become a real expert in something, with AI as the best teacher I've ever had.
+There are real downsides: the network, research, a safer career. But every choice has an opportunity cost, and for me, today, the cost of staying is higher than the cost of leaving.
 
-There are real downsides: the network, research, a safer career, and the obligation to study, which often sparks curiosity you didn't know you had. Without it, the responsibility to pick hard things and go deep is all mine. But every choice has an opportunity cost, and for me, today, the cost of staying is higher than the cost of leaving.
+I left university to keep doing what I love most: understanding things deeply, for the pleasure of it.
 
-I didn't leave university to study less. I left to study more, for the pleasure of understanding.
+A lot of this came from a short video by Salvatore Sanfilippo, [_Ha ancora senso studiare?_](https://www.youtube.com/watch?v=t5ihk_bNRSk), worth watching if you speak Italian.
 
-This post started from a short video by Salvatore Sanfilippo, [_Ha ancora senso studiare?_](https://www.youtube.com/watch?v=t5ihk_bNRSk), which ends with a line I'd sign: studying is still essential.
-
-Everyone I've talked to about this has a different opinion, so I'm curious to hear yours. Write to me at [ciao@leotrapani.com](mailto:ciao@leotrapani.com).
+Everyone I've talked to about this has a different opinion, so I'm curious to hear yours. My inbox at [ciao@leotrapani.com](mailto:ciao@leotrapani.com) and my DMs are always open.
