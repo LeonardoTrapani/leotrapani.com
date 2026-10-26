@@ -56,7 +56,7 @@ Few moments in history have brought a change like this one. I have the chance no
 
 We just closed a €10M Series A. We're bringing the AI frontier into Italian companies, from Allianz and Generali to companies of every kind and size.
 
-I'm a founding engineer, and I've been building Datapizza with the team since I was 16. Today I lead Dual, our platform for agents and automations that companies can actually deploy, on both the technical and the strategic side.
+I've been building Datapizza with the team since I was 16. Today I lead the technical side and the strategy of Dual, our platform for agents and automations that companies can actually deploy.
 
 This round is our real beginning, and now is the time to give it everything, to have a real impact on the AI revolution in the country I was born in.
 
@@ -70,7 +70,7 @@ It's time to put myself on the line: first with Datapizza, then with whatever co
 
 Once I realized all this, university became just a _plan B_, for careers that aren't my goal, and that I don't think need a degree anymore. I wasn't there to learn anymore.
 
-And learning is what I've always loved. As a kid I started programming, taught myself the basics of software and banged my head against it for years. That curiosity, and the chance to build whatever I wanted, got me my first job at 16.
+And learning is what I've always loved. As a kid I started writing software, taught myself the basics and banged my head against it for years. That curiosity, and the chance to build whatever I wanted, got me my first job at 16.
 
 Even during university, most of what I learned, I learned at home: topics I chose to go deep on, and that after many hours I'm slowly becoming an expert in.
 
