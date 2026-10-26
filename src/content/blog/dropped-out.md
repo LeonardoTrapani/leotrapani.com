@@ -48,15 +48,17 @@ Given where I was and the moment we're living in, I chose not to:
 
 ### The AI revolution
 
-Few moments in history have brought a change like this one. I have the chance not only to live it fully, but to live it first-hand, and to make a real contribution to it in the coming years, if I give it everything.
-
 Society is going to change deeply: jobs, roles, how companies hire, the economy, the way we learn. With everything AI is going to change, a degree as a piece of paper will be close to useless.
+
+Few moments in history have brought a change like this one. I have the chance not only to live it fully, but to live it first-hand, and to make a real contribution to it in the coming years, if I give it everything.
 
 ### Datapizza
 
 We just closed a €10M Series A. We're bringing the AI frontier into Italian companies, from Allianz and Generali to companies of every kind and size.
 
-I'm a founding engineer, and I've been building Datapizza with the team since I was 16. Today I lead Dual, our platform for agents and automations that companies can actually deploy, on both the technical and the strategic side. This round is our real beginning, and now is the time to give it everything, to have a real impact on the AI revolution in the country I was born in.
+I'm a founding engineer, and I've been building Datapizza with the team since I was 16. Today I lead Dual, our platform for agents and automations that companies can actually deploy, on both the technical and the strategic side.
+
+This round is our real beginning, and now is the time to give it everything, to have a real impact on the AI revolution in the country I was born in.
 
 ### The startup ecosystem
 
@@ -66,7 +68,7 @@ It's time to put myself on the line: first with Datapizza, then with whatever co
 
 ## University had become a parachute
 
-So university had become just a _plan B_, for careers that aren't my goal, and that I don't think need a degree anymore. I wasn't there to learn anymore.
+Once I realized all this, university became just a _plan B_, for careers that aren't my goal, and that I don't think need a degree anymore. I wasn't there to learn anymore.
 
 And learning is what I've always loved. As a kid I started programming, taught myself the basics of software and banged my head against it for years. That curiosity, and the chance to build whatever I wanted, got me my first job at 16.
 
