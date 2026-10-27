@@ -26,9 +26,9 @@ But there is a reason that matters more than the practical one.
 
 ## The delight of understanding
 
-Most of what humans have ever learned was not learned because work required it. People studied because figuring out how something works is one of the greatest pleasures there is. _Learning regardless of the purpose is a delight_ we have the chance to enjoy, and today we can enjoy it better than ever.
+Most of what humans have ever learned was not learned because work required it. People studied because figuring out how something works is one of the greatest pleasures there is. _Learning for its own sake is a delight_ we have the chance to enjoy, and today we can enjoy it better than ever.
 
-For the first time, something close to the best expert on any topic is literally at hand. You can ask it anything, as many times as you want, at your pace, and go as deep as you like. The limit is no longer access. It's your time and your attention.
+For the first time, something close to the best expert on any topic is literally at hand. You can ask it anything, as many times as you want, at your own pace, and go as deep as you like. The limit is no longer access. It's your time and your attention.
 
 So if learning is what matters, the question becomes: _where can I learn best?_
 
@@ -42,7 +42,7 @@ But the incentives point elsewhere. What university rewards is passing the test,
 
 When I passed Mathematics with a 29 out of 30 without understanding shit, I started to realize university wasn't the right place for me.
 
-To actually get the forma mentis out of university, you have to give it your whole life. Any student should do exactly that.
+To actually get the forma mentis out of university, you have to give it your whole life. Every student should.
 
 Given where I was and the moment we're living in, I chose not to:
 
@@ -50,13 +50,13 @@ Given where I was and the moment we're living in, I chose not to:
 
 Society is going to change deeply: jobs, roles, how companies hire, the economy, the way we learn. With everything AI is going to change, a degree as a piece of paper will be close to useless.
 
-Few moments in history have brought a change like this one. I have the chance not only to live it fully, but to live it first-hand, and to make a real contribution to it in the coming years, if I give it everything.
+Few moments in history have brought a change like this one. I have the chance not just to live it, but to help build it in the coming years, if I give it everything.
 
 ### Datapizza
 
 We just closed a €10M Series A. We're bringing the AI frontier into Italian companies, from Allianz and Generali to companies of every kind and size, and I get to play a central, technical and strategic role in it.
 
-This round is our real beginning, and now is the time to give it everything, to have a real impact on the AI revolution in the country I was born in.
+This round is just the beginning, and now is the time to go all in, to have an impact on the AI revolution in the country I was born in.
 
 ### The startup ecosystem
 
@@ -70,17 +70,17 @@ Once I realized all this, university became just a _plan B_, for careers that ar
 
 And learning is what I've always loved. As a kid I started writing software, taught myself the basics and banged my head against it for years. That curiosity, and the chance to build whatever I wanted, got me my first job at 16.
 
-Even during university, most of what I learned, I learned at home: topics I chose to go deep on, and that after many hours I'm slowly becoming an expert in.
+Even during university, most of what I learned, I learned at home: topics I chose myself, spent countless hours on, and am slowly becoming an expert in.
 
 I had started looking for excuses to stay, just because it was the comfortable option. I wanted to drop every plan B.
 
 ## Leaving to learn more
 
-Because learning, and living this moment, mattered so much to me, leaving was the choice that made the most sense.
+Leaving was the choice that let me have both: learning what I love, and living this moment from the inside.
 
 Now I learn every day by building, and I have much more time and focus to study what I care about and become a real expert in something, with AI as the best teacher I've ever had.
 
-There are real downsides: the network, research, a safer career. But every choice has an opportunity cost, and for me, today, the cost of staying is higher than the cost of leaving.
+Leaving means giving up the network, research opportunities and a safer career. But every choice has an opportunity cost, and for me, today, the cost of staying is higher than the cost of leaving.
 
 I left university to keep doing what I love most: _understanding things deeply, for the pleasure of it_.
 
