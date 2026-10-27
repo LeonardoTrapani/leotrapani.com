@@ -18,7 +18,7 @@ Because studying is now _the most important thing we have left_.
 
 And that is exactly why I left university.
 
-To explain why, I first need to explain why learning still matters at all. I see two reasons.
+Learning still matters, for two reasons.
 
 ## The delight of understanding
 
@@ -28,7 +28,7 @@ For the first time, something close to the best expert on any topic is literally
 
 ## Knowledge changes how you use the oracle
 
-There is also a more practical reason. Even leaving the philosophical one aside, what you know is what sets you apart from everyone else using the same AI.
+There is also a more practical reason: everyone has the same AI. What sets you apart is what you know.
 
 Getting an answer and understanding something are two different things. The more you know, the better you know what to ask, how to read the answer, and what to ask next. _AI amplifies what you understand._
 
