@@ -18,6 +18,8 @@ Because studying is now _the most important thing we have left_.
 
 And that is exactly why I left university.
 
+To explain why, I first need to explain why learning still matters at all. I see two reasons.
+
 ## Knowledge changes how you use the oracle
 
 Getting an answer and understanding something are two different things. The more you know, the better you know what to ask, how to read the answer, and what to ask next. _AI amplifies what you understand._
@@ -34,17 +36,29 @@ So if learning is what matters, the question becomes: _where can I learn best?_
 
 For me, the answer was no longer university.
 
-## Misaligned incentives
+## Knowledge is no longer tied to university
 
-The real value of university is not the exams. It's the _forma mentis_: the way of thinking you build through hours of study, until you understand a subject deeply.
+We have always tied learning, knowledge and being educated to university. Most arguments about whether to go could rest on that alone.
 
-But the incentives point elsewhere. What university rewards is passing the test, not really learning. I call it _exam engineering_: you learn the shape of the exam instead of the subject, and the shortcut that gets you through often makes the subject harder to understand later.
+That has completely changed. Knowledge is now at hand for anyone, so the choice of university has to rest on something else.
+
+University is not useless at all. But if your goal is knowledge, it's the best place only in some cases.
+
+Its real value is not the exams. It's the _forma mentis_: the way of thinking you build through hours of study, until you understand a subject deeply.
+
+The problem is that it's very easy to pass without really learning. I call it _exam engineering_: you learn the shape of the exam instead of the subject, and the shortcut that gets you through often makes the subject harder to understand later. With AI, it's getting even easier.
 
 When I passed Mathematics with a 29 out of 30 without understanding shit, I started to realize university wasn't the right place for me.
 
 To actually get the forma mentis out of university, you have to give it your whole life. Every student should.
 
-Given where I was and the moment we're living in, I chose not to:
+## University had become a parachute
+
+University still makes sense for many careers. It gives you a safer path, and some professions still require a degree.
+
+But with AI you can become an expert much faster, not just in theory but in practice. And for the career I want, building startups, a degree had become just a _plan B_. I wasn't there to learn anymore.
+
+I had started looking for excuses to stay, just because it was the comfortable option. Given where I was and the moment we're living in, I wanted to drop every plan B and give everything to:
 
 ### The AI revolution
 
@@ -64,15 +78,11 @@ The Italian market is finally moving. Actually, it's exploding, and AI is accele
 
 It's time to put myself on the line: first with Datapizza, then with whatever comes next.
 
-## University had become a parachute
+### Building
 
-Once I realized all this, university became just a _plan B_, for careers that aren't my goal, and that I don't think need a degree anymore. I wasn't there to learn anymore.
-
-And learning is what I've always loved. As a kid I started writing software, taught myself the basics and banged my head against it for years. That curiosity, and the chance to build whatever I wanted, got me my first job at 16.
+Building is how I've always learned. As a kid I started writing software, taught myself the basics and banged my head against it for years. That curiosity, and the chance to build whatever I wanted, got me my first job at 16.
 
 Even during university, most of what I learned, I learned at home: topics I chose myself, spent countless hours on, and am slowly becoming an expert in.
-
-I had started looking for excuses to stay, just because it was the comfortable option. I wanted to drop every plan B.
 
 ## Leaving to learn more
 
@@ -81,6 +91,8 @@ Leaving was the choice that let me have both: learning what I love, and living t
 Now I learn every day by building, and I have much more time and focus to study what I care about and become a real expert in something, with AI as the best teacher I've ever had.
 
 Leaving means giving up the network, research opportunities and a safer career. But every choice has an opportunity cost, and for me, today, the cost of staying is higher than the cost of leaving.
+
+For many people, university is still the best place to learn. For me, today, it isn't.
 
 I left university to keep doing what I love most: _understanding things deeply_.
 
