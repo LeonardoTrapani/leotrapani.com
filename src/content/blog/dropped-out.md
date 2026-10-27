@@ -46,17 +46,21 @@ Its real value is not the exams. It's the _forma mentis_: the way of thinking yo
 
 The problem is that it's very easy to pass without really learning. I call it _exam engineering_: you learn the shape of the exam instead of the subject, and the shortcut that gets you through often makes the subject harder to understand later. With AI, it's getting even easier.
 
-When I passed Mathematics with a 29 out of 30 without understanding shit, I started to realize university wasn't the right place for me.
-
 ## University had become a parachute
 
-University gives you a lot: a safer path, a network, new ideas, a direction. But none of that is what you need to understand something deeply and become a real expert in it.
+So university is no longer necessarily the best place to learn. What's left is everything else it gives you: a safer career, a network, new ideas, a direction.
 
-And with AI you can become an expert much faster, not just in theory but in practice. And for the career I want, building startups, a degree had become just a _plan B_. I wasn't there to learn anymore.
+For me, none of that made sense anymore. University had become just a _plan B_, the comfortable option, and I had started looking for excuses to stay.
 
-I had started looking for excuses to stay, just because it was the comfortable option. Leaving means giving all of that up. But every choice has an opportunity cost, and for me, today, the cost of staying is higher than the cost of leaving.
+Leaving means giving all of that up. But every choice has an opportunity cost, and for me, today, the cost of staying is higher than the cost of leaving, because of:
 
-I wanted to drop every plan B and give everything to:
+### Building startups
+
+What I want to do is build startups, and for that, nothing teaches you as much as building.
+
+It's how I've always learned. As a kid I started writing software, taught myself the basics and banged my head against it for years. That curiosity, and the chance to build whatever I wanted, got me my first job at 16. Even during university, most of what I learned, I learned at home: topics I chose myself, spent countless hours on, and am slowly becoming an expert in.
+
+Real knowledge comes from building things, especially at the frontier, where nobody has the answer yet. That rarely happens at university, even in an engineering degree. And with AI, you can become an expert much faster, not just in theory but in practice.
 
 ### The AI revolution
 
@@ -75,14 +79,6 @@ This round is just the beginning, and now is the time to go all in, to have an i
 The Italian market is finally moving. Actually, it's exploding, and AI is accelerating it, in Italy and beyond.
 
 It's time to put myself on the line: first with Datapizza, then with whatever comes next.
-
-### Building
-
-Building is how I've always learned. As a kid I started writing software, taught myself the basics and banged my head against it for years. That curiosity, and the chance to build whatever I wanted, got me my first job at 16.
-
-Even during university, most of what I learned, I learned at home: topics I chose myself, spent countless hours on, and am slowly becoming an expert in.
-
-Real knowledge comes from building things, especially at the frontier, where nobody has the answer yet. That rarely happens at university, even in an engineering degree.
 
 ## Leaving to learn more
 
