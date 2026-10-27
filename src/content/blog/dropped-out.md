@@ -56,7 +56,7 @@ Few moments in history have brought a change like this one. I have the chance no
 
 We just closed a €10M Series A. We're bringing the AI frontier into Italian companies, from Allianz and Generali to companies of every kind and size.
 
-I've been building Datapizza with the team since I was 16. Today I lead the technical side and the strategy of Dual, our platform for agents and automations that companies can actually deploy.
+I've been building Datapizza with the team since I was 16. Today I lead the technical direction of Dual, our platform for agents and automations that companies can actually deploy.
 
 This round is our real beginning, and now is the time to give it everything, to have a real impact on the AI revolution in the country I was born in.
 
