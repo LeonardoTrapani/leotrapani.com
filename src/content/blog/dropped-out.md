@@ -82,6 +82,6 @@ Now I learn every day by building, and I have much more time and focus to study 
 
 Leaving means giving up the network, research opportunities and a safer career. But every choice has an opportunity cost, and for me, today, the cost of staying is higher than the cost of leaving.
 
-I left university to keep doing what I love most: _understanding things deeply, for the pleasure of it_.
+I left university to keep doing what I love most: _understanding things deeply_.
 
 Everyone I've talked to about this has a different opinion, so I'm curious to hear yours. My inbox at [ciao@leotrapani.com](mailto:ciao@leotrapani.com) and my DMs are always open.
