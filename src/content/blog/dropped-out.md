@@ -10,6 +10,8 @@ I dropped out of Bocconi University.
 
 Does university still matter in the AI era?
 
+There are two reasons to go to university: to learn, and to build a career. AI is changing both.
+
 ## Why study at all?
 
 AI is already at the level of the best experts in almost every field, and it keeps improving exponentially. So why study?
@@ -36,23 +38,35 @@ So if learning is what matters, the question becomes: _where can I learn best?_
 
 For me, the answer was no longer university.
 
-## Knowledge is no longer tied to university
+## University is often not the best place to learn
 
-We have always tied learning, knowledge and being educated to university, because that's where the greatest experts were.
+We have always tied knowledge to university, because that's where the greatest experts were. Not anymore: they're now at hand for anyone.
 
-Not anymore. The greatest experts are now at hand for anyone. University is far from useless, but if your goal is knowledge, it's no longer the obvious choice.
+But the problem isn't only that there are alternatives. It's the system itself.
 
-Its real value is not the exams. It's the _forma mentis_: the way of thinking you build through hours of study, until you understand a subject deeply.
+The real value of university is the _forma mentis_: the way of thinking you build through hours of study, until you understand a subject deeply. But that's not what the system measures. It measures exams.
 
-The problem is that it's very easy to pass without really learning. I call it _exam engineering_: you learn the shape of the exam instead of the subject, and the shortcut that gets you through often makes the subject harder to understand later. With AI, it's getting even easier.
+**You study for the exam, not the subject.** To pass, you learn the shape of the exam instead of what's underneath it. I call it _exam engineering_, and with AI it's getting even easier.
+
+**Exams are getting easier to game.** Oral exams, where a professor can actually tell whether you understood, are disappearing. Abroad there were almost none to begin with, and in Italy they're going the same way. A written test checks whether you can reproduce an answer, not whether you understand it.
+
+**Universities can't handle the volume.** Almost everyone goes to university now, so universities standardize: more students, more written tests, less time for each of them.
+
+The result is a system built to certify people at scale, not to make them understand. You can still build the forma mentis there, but _despite the system, not thanks to it_.
+
+## The career argument
+
+The other reason to go to university is your career: a degree, a network, a safer path, a direction.
+
+But that is changing too. When everyone has a degree, a degree stops making a difference. And with everything AI is going to change, from jobs and roles to how companies hire, a degree as a piece of paper will be close to useless.
+
+It also depends on the career you want. For mine, building startups, what counts is what you build, not the degree you have.
 
 ## University had become a parachute
 
-So university is no longer necessarily the best place to learn. What's left is everything else it gives you: a safer career, a network, new ideas, a direction.
+So for me, university was no longer the best place to learn, and it no longer served the career I wanted. It had become just a _plan B_, the comfortable option, and I had started looking for excuses to stay.
 
-For me, none of that made sense anymore. University had become just a _plan B_, the comfortable option, and I had started looking for excuses to stay.
-
-Leaving means giving all of that up. But every choice has an opportunity cost, and for me, today, the cost of staying is higher than the cost of leaving, because of:
+Leaving means giving up the network, the safer path and everything else that comes with it. But every choice has an opportunity cost, and for me, today, the cost of staying is higher than the cost of leaving, because of:
 
 ### Building startups
 
@@ -64,7 +78,7 @@ Real knowledge comes from building things, especially at the frontier, where nob
 
 ### The AI revolution
 
-Society is going to change deeply: jobs, roles, how companies hire, the economy, the way we learn. With everything AI is going to change, a degree as a piece of paper will be close to useless.
+Society is going to change deeply: jobs, roles, how companies hire, the economy, the way we learn.
 
 Few moments in history have brought a change like this one. I have the chance not just to live it, but to help build it in the coming years, if I give it everything.
 
