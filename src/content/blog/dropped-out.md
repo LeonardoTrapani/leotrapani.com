@@ -44,7 +44,7 @@ The real value of university is the _forma mentis_: the way of thinking you buil
 
 **You study for the exam, not the subject.** To pass, you learn the shape of the exam instead of what's underneath it. I call it _exam engineering_, and with AI it's getting even easier.
 
-**Exams are getting easier to game.** Oral exams, where a professor can actually tell whether you understood, are disappearing. From what I've seen, outside Italy most exams are already written, and Italian universities are going the same way. Most written tests check whether you can reproduce an answer, not whether you understand it.
+**Exams are getting easier to game.** Oral exams, where a professor can actually tell whether you understood, are disappearing. From what I've seen, outside Italy most exams are already written, and Italian universities are following suit. Most written tests check whether you can reproduce an answer, not whether you understand it.
 
 **Universities can't handle the volume.** More and more people go to university, so universities standardize: more students, more written tests, less time for each of them.
 
