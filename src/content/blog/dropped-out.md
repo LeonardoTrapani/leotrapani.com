@@ -22,7 +22,7 @@ There are two reasons.
 
 ### The delight of understanding
 
-Most of what humans have ever learned was not learned because work required it. People studied because figuring out how something works is one of the greatest pleasures there is. _Learning for its own sake is a delight_, and today it's more accessible than ever.
+Figuring out how something works is one of the greatest pleasures there is. It doesn't need a professional justification. _Learning for its own sake is a delight_, and today it's more accessible than ever.
 
 For the first time, something close to the best expert on any topic is literally at hand. You can ask it anything, as many times as you want, at your own pace, and go as deep as you like. The limit is no longer access. It's your time and your attention.
 
@@ -82,13 +82,13 @@ I wanted to drop every plan B.
 
 ## Why now
 
-There has never been a better time to go all in.
+The timing could not be better.
 
 ### The AI revolution
 
 Society is going to change deeply: jobs, the economy, the way we work and learn.
 
-Few moments in history have brought a change like this one. I have the chance not just to live it, but to help build it in the coming years, if I give it everything.
+Few moments in history have brought a change like this one. I have the chance not just to live it, but to help build it, if I give it everything.
 
 ### Datapizza
 
@@ -98,13 +98,13 @@ This round is just the beginning, and now is the time to go all in, to have an i
 
 ### The startup ecosystem
 
-The Italian market is finally moving. Actually, it's exploding, and AI is accelerating it, in Italy and beyond.
+The startup market is finally moving. Actually, it's exploding, and AI is accelerating it, in Italy and beyond.
 
 It's time to put myself on the line: first with Datapizza, then with whatever comes next.
 
 ## Leaving to learn more
 
-Leaving was the choice that let me have both: learning what I love, and living this moment from the inside.
+Leaving was the choice that let me have both: learning what I love, and being part of this moment.
 
 Now I learn every day by building. I also have much more time and focus to study what I care about and become a real expert in something, with AI as the best teacher I've ever had.
 
