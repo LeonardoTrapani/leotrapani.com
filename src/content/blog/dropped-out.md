@@ -22,7 +22,7 @@ There are two reasons.
 
 ### The delight of understanding
 
-Most of what humans have ever learned was not learned because work required it. People studied because figuring out how something works is one of the greatest pleasures there is. _Learning for its own sake is a delight_ we have the chance to enjoy, and today we can enjoy it better than ever.
+Most of what humans have ever learned was not learned because work required it. People studied because figuring out how something works is one of the greatest pleasures there is. _Learning for its own sake is a delight_, and today it's more accessible than ever.
 
 For the first time, something close to the best expert on any topic is literally at hand. You can ask it anything, as many times as you want, at your own pace, and go as deep as you like. The limit is no longer access. It's your time and your attention.
 
@@ -36,7 +36,7 @@ So if learning is what matters, the question becomes: _where can I learn best?_
 
 ## University is often not the best place to learn
 
-We have always tied knowledge to university, because that's where the greatest experts were. Not anymore: they're now at hand for anyone.
+We have always tied knowledge to university, because that's where the greatest experts were. Not anymore: their knowledge is now at hand for anyone.
 
 But the problem isn't only that there are alternatives. It's the system itself.
 
@@ -44,9 +44,9 @@ The real value of university is the _forma mentis_: the way of thinking you buil
 
 **You study for the exam, not the subject.** To pass, you learn the shape of the exam instead of what's underneath it. I call it _exam engineering_, and with AI it's getting even easier.
 
-**Exams are getting easier to game.** Oral exams, where a professor can actually tell whether you understood, are disappearing. Abroad there were almost none to begin with, and in Italy they're going the same way. A written test checks whether you can reproduce an answer, not whether you understand it.
+**Exams are getting easier to game.** Oral exams, where a professor can actually tell whether you understood, are disappearing. From what I've seen, outside Italy most exams are already written, and Italian universities are going the same way. Most written tests check whether you can reproduce an answer, not whether you understand it.
 
-**Universities can't handle the volume.** Almost everyone goes to university now, so universities standardize: more students, more written tests, less time for each of them.
+**Universities can't handle the volume.** More and more people go to university, so universities standardize: more students, more written tests, less time for each of them.
 
 The result is a system built to certify people at scale, not to make them understand. You can still build the forma mentis there, but _despite the system, not thanks to it_.
 
@@ -54,7 +54,7 @@ The result is a system built to certify people at scale, not to make them unders
 
 The other reason to go is your career: a degree, a network, a safer path, a direction.
 
-But that is changing too, and Goodhart's law applies here as well. A degree was meant to measure what you know. Once it became the target, people optimized for the degree instead of the knowledge, and companies learned to trust it less. Now that almost everyone has one, it doesn't set you apart either.
+But that is changing too, and Goodhart's law applies here as well. A degree was meant to measure what you know. Once it became the target, people optimized for the degree instead of the knowledge. And now that more and more people have one, it sets you apart less and less.
 
 With everything AI is going to change in how companies hire, a degree as a piece of paper will be close to useless.
 
@@ -62,15 +62,15 @@ It also depends on the career you want. Some still require a degree: if you want
 
 ## Learning by building
 
-For me, both answers had changed.
+For me, university no longer made sense on either count.
 
-Building is how I've always learned. As a kid I started writing software, taught myself the basics and banged my head against it for years. That curiosity, and the chance to build whatever I wanted, got me my first job at 16.
+I've always learned a lot by building. As a kid I started writing software, taught myself the basics and banged my head against it for years. That curiosity, and the chance to build whatever I wanted, got me my first job at 16.
 
-Even during university, most of what I learned, I learned at home: topics I chose myself, spent countless hours on, and am slowly becoming an expert in.
+Even during university, I learned the most at home, on topics I chose myself, spent countless hours on, and am slowly becoming an expert in.
 
-Real knowledge comes from building things, especially at the frontier, where nobody has the answer yet. That rarely happens at university, even in an engineering degree. And with AI, you can become an expert much faster, not just in theory but in practice.
+Building things, especially at the frontier where nobody has the answer yet, is one of the best ways to learn. It's not the only one, but it rarely happens at university, even in an engineering degree. And with AI, you can become an expert much faster, not just in theory but in practice.
 
-So when I asked myself where I can learn best, the answer was no longer university.
+So when I asked myself where I could learn best, the answer was no longer university.
 
 ## University had become a parachute
 
@@ -106,7 +106,7 @@ It's time to put myself on the line: first with Datapizza, then with whatever co
 
 Leaving was the choice that let me have both: learning what I love, and living this moment from the inside.
 
-Now I learn every day by building, and I have much more time and focus to study what I care about and become a real expert in something, with AI as the best teacher I've ever had.
+Now I learn every day by building. I also have much more time and focus to study what I care about and become a real expert in something, with AI as the best teacher I've ever had.
 
 Leaving means giving up the network, the safer path and everything else that comes with it. But every choice has an opportunity cost, and for me, today, the cost of staying is higher than the cost of leaving.
 
