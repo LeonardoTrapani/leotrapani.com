@@ -10,7 +10,7 @@ I dropped out of Bocconi University.
 
 Does university still matter in the AI era?
 
-People go to university for two things: to learn, and to build a career. AI is changing both.
+People go to university for two things: _to learn_, and _to build a career_. AI is changing both.
 
 ## Why learning matters more than ever
 
@@ -40,7 +40,7 @@ We have always tied knowledge to university, because that's where the greatest e
 
 But the problem isn't only that there are alternatives. It's the system itself.
 
-The real value of university is the _forma mentis_: the way of thinking you build through hours of study, until you understand a subject deeply. But that's not what the system measures. It measures exams.
+The real value of university is the _forma mentis_: the way of thinking you build through hours of study, until you understand a subject deeply. But that's not what the system measures. It measures exams, and Goodhart's law says that _when a measure becomes a target, it ceases to be a good measure_.
 
 **You study for the exam, not the subject.** To pass, you learn the shape of the exam instead of what's underneath it. I call it _exam engineering_, and with AI it's getting even easier.
 
@@ -54,11 +54,11 @@ The result is a system built to certify people at scale, not to make them unders
 
 The other reason to go is your career: a degree, a network, a safer path, a direction.
 
-But that is changing too. A degree was meant to measure what you know. Once it became the target, people optimized for the degree instead of the knowledge, and it stopped measuring much. It's Goodhart's law: _when a measure becomes a target, it ceases to be a good measure_. And now that almost everyone has one, it doesn't set you apart either.
+But that is changing too, and Goodhart's law applies here as well. A degree was meant to measure what you know. Once it became the target, people optimized for the degree instead of the knowledge, and companies learned to trust it less. Now that almost everyone has one, it doesn't set you apart either.
 
 With everything AI is going to change in how companies hire, a degree as a piece of paper will be close to useless.
 
-It also depends on the career you want. Some still require a degree. Many no longer do.
+It also depends on the career you want. Some still require a degree: if you want to be a lawyer or a doctor, you need one. Many no longer do.
 
 ## Learning by building
 
@@ -82,7 +82,7 @@ I wanted to drop every plan B.
 
 ## Why now
 
-And there has never been a better time to go all in.
+There has never been a better time to go all in.
 
 ### The AI revolution
 
