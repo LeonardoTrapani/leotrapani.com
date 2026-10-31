@@ -20,7 +20,7 @@ People go to university for two things: to learn, and to build a career. AI is c
 
 ## Why learning matters more than ever
 
-There are two reasons.
+AI doesn't make learning useless. If anything, it makes it more important than ever, for two reasons.
 
 ### The delight of understanding
 
