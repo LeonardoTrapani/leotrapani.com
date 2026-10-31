@@ -10,17 +10,15 @@ I dropped out of Bocconi University.
 
 Does university still matter in the AI era?
 
-AI is already at the level of the best experts in almost every field, and it keeps improving exponentially. So why study?
-
-Because studying is now _the most important thing we have left_.
-
-And that is exactly why I left university.
-
 People go to university for two things: to learn, and to build a career. AI is changing both.
 
 ## Why learning matters more than ever
 
-AI doesn't make learning useless. If anything, it makes it more important than ever, for two reasons.
+AI is already at the level of the best experts in almost every field, and it keeps improving exponentially. So why study?
+
+Because studying is now _the most important thing we have left_.
+
+There are two reasons.
 
 ### The delight of understanding
 
