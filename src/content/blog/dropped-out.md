@@ -42,11 +42,11 @@ But the problem isn't only that there are alternatives. It's the system itself.
 
 The real value of university is the _forma mentis_: the way of thinking you build through hours of study, until you understand a subject deeply. But that's not what the system measures. It measures exams, and Goodhart's law says that _when a measure becomes a target, it ceases to be a good measure_.
 
-**You study for the exam, not the subject.** To pass, you learn the shape of the exam instead of what's underneath it. I call it _exam engineering_, and with AI it's getting even easier.
+You study for the exam, not the subject. To pass, you learn the shape of the exam instead of what's underneath it. I call it _exam engineering_, and with AI it's getting even easier.
 
-**Exams are getting easier to game.** Oral exams, where a professor can actually tell whether you understood, are disappearing. From what I've seen, outside Italy most exams are already written, and Italian universities are following suit. Most written tests check whether you can reproduce an answer, not whether you understand it.
+Exams are getting easier to game. Oral exams, where a professor can actually tell whether you understood, are disappearing. From what I've seen, outside Italy most exams are already written, not oral, and Italian universities are following suit. Most written tests check whether you can reproduce an answer, not whether you understand it.
 
-**Universities can't handle the volume.** More and more people go to university, so universities standardize: more students, more written tests, less time for each of them.
+Universities can't handle the volume. More and more people go to university, so universities standardize: more students, more written tests, less time for each of them.
 
 The result is a system built to certify people at scale, not to make them understand. You can still build the forma mentis there, but _despite the system, not thanks to it_.
 
@@ -61,8 +61,6 @@ With everything AI is going to change in how companies hire, a degree as a piece
 It also depends on the career you want. Some still require a degree: if you want to be a lawyer or a doctor, you need one. Many no longer do.
 
 ## Learning by building
-
-For me, university no longer made sense on either count.
 
 I've always learned a lot by building. As a kid I started writing software, taught myself the basics and banged my head against it for years. That curiosity, and the chance to build whatever I wanted, got me my first job at 16.
 
